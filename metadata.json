@@ -1,0 +1,6 @@
+{
+  "name": "Hero Section Beranda",
+  "description": "Hero section modern dan responsif untuk halaman beranda dengan React, Vite, dan Tailwind CSS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
