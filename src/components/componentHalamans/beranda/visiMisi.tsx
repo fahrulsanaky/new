@@ -4,7 +4,7 @@ import { Telescope, Rocket } from 'lucide-react';
 export default function VisiMisi() {
   return (
     <section className="w-full h-auto bg-white flex items-center justify-center py-0 px-[48px]">
-      <div className="w-full max-w-7xl mx-0 px-[32px] py-[32px] flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12">
+      <div className="w-full max-w-7xl mx-0 px-[32px] py-[48px] flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12">
         {/* Kolom Kiri: Quote Icon, Paragraf Utama, dan Gambar Abstract Wave */}
         <div
           id="pencapaian-left-container"

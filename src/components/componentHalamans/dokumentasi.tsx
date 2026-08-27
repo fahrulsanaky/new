@@ -62,7 +62,7 @@ export default function Dokumentasi() {
 
   return (
     <section className="w-full h-auto bg-white flex items-center justify-center py-0 px-[48px]">
-      <div className="w-full max-w-7xl mx-0 px-[32px] py-[32px] flex flex-col items-center">
+      <div className="w-full max-w-7xl mx-0 px-[32px] py-[48px] flex flex-col items-center">
         {/* Judul & Paragraf di posisi tengah */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
           <h2

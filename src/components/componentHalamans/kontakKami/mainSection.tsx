@@ -3,7 +3,7 @@ import React from 'react';
 export default function MainSection() {
   return (
     <section id="mainSection" className="w-full h-auto bg-white flex items-center justify-center py-0 px-[48px]">
-      <div className="w-full max-w-7xl mx-0 px-[32px] py-[32px] flex flex-col md:flex-row gap-8 lg:gap-12 items-center justify-between">
+      <div className="w-full max-w-7xl mx-0 px-[32px] py-[48px] flex flex-col md:flex-row gap-8 lg:gap-12 items-center justify-between">
         {/* Bagian Kiri: Teks & Informasi (35%) */}
         <div
           id="informasi-left-text-wrapper"

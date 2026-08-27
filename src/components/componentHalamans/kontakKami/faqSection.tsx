@@ -37,7 +37,7 @@ export default function FaqSection() {
 
   return (
     <section id="faqSection" className="w-full h-auto bg-white py-0 px-[48px] flex items-center justify-center">
-      <div className="w-full max-w-7xl mx-0 px-[32px] py-[32px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      <div className="w-full max-w-7xl mx-0 px-[32px] py-[48px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         {/* Kolom Kiri: Informasi & Teks */}
         <div id="faq-left-content" className="lg:col-span-5 flex flex-col items-start space-y-5 text-left">
           {/* Heading */}

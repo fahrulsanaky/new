@@ -6,7 +6,7 @@ export default function ProgramTerbaru() {
 
   return (
     <section className="w-full h-auto bg-white flex items-center justify-center py-0 px-[48px]">
-      <div className="w-full max-w-7xl mx-0 flex flex-col px-[32px] py-[32px]">
+      <div className="w-full max-w-7xl mx-0 flex flex-col px-[32px] py-[48px]">
         {/* Header: Title on Top, Description below Title */}
         <div className="flex flex-col items-center text-center mb-8">
           <h2

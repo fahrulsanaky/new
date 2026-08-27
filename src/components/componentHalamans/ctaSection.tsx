@@ -24,7 +24,7 @@ export default function CtaSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-0 px-[32px] py-[32px] flex flex-col lg:flex-row items-start justify-between gap-8">
+      <div className="relative z-10 w-full max-w-7xl mx-0 px-[32px] py-[48px] flex flex-col lg:flex-row items-start justify-between gap-8">
         {/* Kolom Kiri: Judul, Paragraf, dan Tombol */}
         <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
           {/* Judul Utama */}

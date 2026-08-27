@@ -5,7 +5,7 @@ export default function CtaPelatihan() {
   const navigate = useNavigate();
 
   return (
-    <section id="ctaPelatihan" className="w-full h-auto bg-white py-[42px] px-4 sm:px-8 flex justify-center items-center">
+    <section id="ctaPelatihan" className="w-full h-auto bg-white py-[48px] px-4 sm:px-8 flex justify-center items-center">
       {/* Main Card Container */}
       <div 
         id="cta-pelatihan-card"

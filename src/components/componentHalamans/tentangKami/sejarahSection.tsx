@@ -3,7 +3,7 @@ import { Route } from 'lucide-react';
 
 export default function SejarahSection() {
   return (
-    <section id="sejarahSection" className="w-full h-auto bg-white flex items-center justify-center py-[32px] px-[48px]">
+    <section id="sejarahSection" className="w-full h-auto bg-white flex items-center justify-center py-[48px] px-[48px]">
       <div className="w-full max-w-[1196px] mx-auto flex flex-col items-center justify-center gap-6 lg:gap-8">
         {/* Main Blue Banner Container */}
         <div

@@ -36,7 +36,7 @@ const testimonialsData = [
 
 export default function Testimoni() {
   return (
-    <section className="w-full h-auto bg-white flex items-center justify-center py-[32px] px-[48px]">
+    <section className="w-full h-auto bg-white flex items-center justify-center py-[48px] px-[48px]">
       <div
         id="testimoni-card-1"
         className="w-full max-w-[1196px] bg-[#022859] rounded-[16px] p-[32px] flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 text-left"

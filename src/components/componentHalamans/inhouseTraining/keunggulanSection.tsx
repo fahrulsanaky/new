@@ -36,7 +36,7 @@ const keunggulanData = [
 
 export default function KeunggulanSection() {
   return (
-    <section id="keunggulanSection" className="w-full bg-[#ffffff] flex items-center justify-center py-[32px] px-[48px]">
+    <section id="keunggulanSection" className="w-full bg-[#ffffff] flex items-center justify-center py-[48px] px-[48px]">
       <div
         id="inhouse-keunggulan-card-main"
         className="w-full max-w-[1196px] bg-[#022859] rounded-[16px] px-[32px] py-[42px] flex flex-col items-start justify-start gap-8 lg:gap-10 text-left"

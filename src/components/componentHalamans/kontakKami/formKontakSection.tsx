@@ -28,7 +28,7 @@ export default function FormKontakSection() {
     <section id="formKontak" className="w-full bg-[#1cd690] flex items-center justify-center py-0 px-[48px]">
       <div 
         id="form-kontak-container" 
-        className="w-full max-w-7xl mx-0 px-[32px] py-[32px] flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12"
+        className="w-full max-w-7xl mx-0 px-[32px] py-[48px] flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12"
       >
         {/* Kolom Kiri: Lebar 35% */}
         <div 
@@ -71,24 +71,24 @@ export default function FormKontakSection() {
         >
           <div
             id="form-kontak-card"
-            className="w-full max-w-2xl bg-white rounded-[12px] py-6 sm:py-8 lg:py-9 px-[30px] shadow-xl shadow-[#022859]/10 border border-white/60"
+            className="w-full max-w-2xl bg-white rounded-[12px] px-[24px] py-[24px] shadow-lg shadow-[#022859]/10 border border-white/60"
           >
             {isSubmitted ? (
               <div
                 id="form-kontak-success"
-                className="py-10 px-4 text-center flex flex-col items-center justify-center animate-fadeIn"
+                className="py-6 px-4 text-center flex flex-col items-center justify-center animate-fadeIn"
               >
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
-                  <CheckCircle2 size={36} />
+                <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-3">
+                  <CheckCircle2 size={28} />
                 </div>
                 <h3
-                  className="text-[22px] font-bold text-[#022859] mb-2"
+                  className="text-[20px] font-bold text-[#022859] mb-1.5"
                   style={{ fontFamily: 'Poppins, sans-serif' }}
                 >
                   Pesan Berhasil Dikirim!
                 </h3>
                 <p
-                  className="text-slate-600 text-[14px] max-w-md mb-6 leading-relaxed"
+                  className="text-slate-600 text-[13.5px] max-w-md mb-4 leading-relaxed"
                   style={{ fontFamily: 'Nunito, sans-serif' }}
                 >
                   Terima kasih, <strong>{formData.namaDepan} {formData.namaBelakang}</strong>. Pesan Anda telah kami terima dan tim konsultan kami akan segera menghubungi Anda melalui nomor WhatsApp <strong>{formData.noWhatsapp || '-'}</strong> atau email <strong>{formData.email || '-'}</strong>.
@@ -107,7 +107,7 @@ export default function FormKontakSection() {
                       pesan: '',
                     });
                   }}
-                  className="px-6 py-2.5 bg-[#022859] text-white text-[14px] font-semibold rounded-[12px] hover:bg-[#022859]/90 transition-colors cursor-pointer"
+                  className="px-5 py-2 bg-[#022859] text-white text-[13.5px] font-semibold rounded-[10px] hover:bg-[#022859]/90 transition-colors cursor-pointer"
                 >
                   Kirim Pesan Lain
                 </button>
@@ -116,14 +116,14 @@ export default function FormKontakSection() {
               <form
                 id="form-kontak-actual-form"
                 onSubmit={handleSubmit}
-                className="space-y-4 sm:space-y-5"
+                className="space-y-3 sm:space-y-3.5"
               >
                 {/* Baris 1: Nama Depan & Nama Belakang */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="kontak-form-nama-depan"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       Nama depan <span className="text-red-500">*</span>
@@ -136,15 +136,15 @@ export default function FormKontakSection() {
                       value={formData.namaDepan}
                       onChange={handleInputChange}
                       placeholder="Nama depan Anda"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
 
-                  <div className="space-y-1.5 text-left">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="kontak-form-nama-belakang"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       Nama belakang <span className="text-red-500">*</span>
@@ -157,18 +157,18 @@ export default function FormKontakSection() {
                       value={formData.namaBelakang}
                       onChange={handleInputChange}
                       placeholder="Nama belakang Anda"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
                 </div>
 
                 {/* Baris 2: Email & No. Whatsapp */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="kontak-form-email"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       Email <span className="text-red-500">*</span>
@@ -181,15 +181,15 @@ export default function FormKontakSection() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="email@anda.id"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
 
-                  <div className="space-y-1.5 text-left">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="kontak-form-no-whatsapp"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       No. Whatsapp <span className="text-red-500">*</span>
@@ -202,18 +202,18 @@ export default function FormKontakSection() {
                       value={formData.noWhatsapp}
                       onChange={handleInputChange}
                       placeholder="08xxxxxxxxxx"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
                 </div>
 
-                {/* Baris 3: Subjek (Lebar sama persis dengan field Email) */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5 text-left">
+                {/* Baris 3: Subjek */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="kontak-form-subjek"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       Subjek <span className="text-red-500">*</span>
@@ -226,17 +226,17 @@ export default function FormKontakSection() {
                       value={formData.subjek}
                       onChange={handleInputChange}
                       placeholder="Subjek pertanyaan atau topik"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
                 </div>
 
                 {/* Baris 4: Pesan */}
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-1 text-left">
                   <label
                     htmlFor="kontak-form-pesan"
-                    className="block text-[14px] font-bold text-[#022859]"
+                    className="block text-[13px] font-bold text-[#022859]"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     Pesan <span className="text-red-500">*</span>
@@ -245,21 +245,21 @@ export default function FormKontakSection() {
                     id="kontak-form-pesan"
                     name="pesan"
                     required
-                    rows={4}
+                    rows={2.5}
                     value={formData.pesan}
                     onChange={handleInputChange}
                     placeholder="Tuliskan pesan lengkap atau pertanyaan Anda di sini..."
-                    className="w-full p-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all resize-none"
+                    className="w-full p-3 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all resize-none h-[72px]"
                     style={{ fontFamily: 'Nunito, sans-serif' }}
                   />
                 </div>
 
                 {/* Tombol Submit */}
-                <div className="pt-2">
+                <div className="pt-1">
                   <button
                     type="submit"
                     id="kontak-form-btn-submit"
-                    className="w-full h-[52px] bg-[#022859] text-white font-bold text-[15px] sm:text-[16px] rounded-[12px] border border-[#022859] flex items-center justify-center transition-all duration-200 cursor-pointer hover:bg-white hover:text-[#022859] hover:-translate-y-0.5 hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] active:translate-y-0"
+                    className="w-full h-[44px] bg-[#022859] text-white font-bold text-[14.5px] rounded-[10px] border border-[#022859] flex items-center justify-center transition-all duration-200 cursor-pointer hover:bg-white hover:text-[#022859] hover:-translate-y-0.5 hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] active:translate-y-0"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     <span>Kirim</span>

@@ -1,39 +1,33 @@
 import React from 'react';
-import { Info } from 'lucide-react';
 
 export default function MainSection() {
+  const teamImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&auto=format&fit=crop&q=80";
+  const workshopImg = "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80";
+  const seminarImg = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80";
+
   return (
     <section id="mainSection" className="w-full h-auto bg-white flex items-center justify-center py-0 px-[48px]">
-      <div className="w-full max-w-7xl mx-0 px-[32px] py-[32px] flex flex-col gap-10 lg:gap-12">
-        {/* Row Atas: 2 Kolom (Visi Kiri 35% & Tentang Kami Kanan 50%) */}
-        <div className="w-full flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12">
-          {/* Kolom Kiri: Visi (35%) */}
+      <div className="w-full max-w-7xl mx-0 px-[32px] py-[48px] flex flex-col gap-10 lg:gap-12">
+        {/* Row Atas: 2 Kolom (Tentang Kami Kiri 45% & Bento Gallery Kanan 50%) */}
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+          {/* Kolom Kiri: Deskripsi (45%) */}
           <div
             id="tentang-kami-left-container"
-            className="w-full lg:w-[35%] flex flex-col justify-start"
+            className="w-full lg:w-[45%] flex flex-col justify-start shrink-0"
           >
-            {/* Visi Badge / Title */}
-            <div className="mb-[4px] flex items-center justify-start gap-2.5">
-              <span
-                id="tentang-kami-visi-icon-wrapper"
-                className="text-[#1cd690] flex items-center"
-                style={{ color: '#1cd690' }}
-              >
-                <Info size={28} className="text-[#1cd690]" color="#1cd690" />
-              </span>
-              <span
-                id="tentang-kami-visi-label-badge"
-                className="text-[#1cd690] font-bold text-[12px] leading-[19.5px] tracking-wider uppercase inline-block"
-                style={{
-                  fontFamily: 'Poppins, sans-serif',
-                  fontSize: '12px',
-                  lineHeight: '19.5px',
-                  color: '#1cd690',
-                }}
-              >
-                Tentang Kami
-              </span>
-            </div>
+            {/* Badge Label */}
+            <span
+              id="tentang-kami-visi-label-badge"
+              className="text-[#1cd690] font-bold text-[12px] leading-[19.5px] tracking-wider uppercase inline-block mb-[4px]"
+              style={{
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '12px',
+                lineHeight: '19.5px',
+                color: '#1cd690',
+              }}
+            >
+              Tentang Kami
+            </span>
 
             {/* Judul Utama */}
             <h2
@@ -83,17 +77,40 @@ export default function MainSection() {
             </div>
           </div>
 
-          {/* Kolom Kanan: Gambar Tentang Kami dengan Lebar 50% dan Radius 16px */}
+          {/* Kolom Kanan: Bento Grid Layout (50%) sama seperti Beranda */}
           <div
             id="tentang-kami-right-image-wrapper"
-            className="w-full lg:w-[50%] rounded-[16px] overflow-hidden shadow-sm h-[320px] sm:h-[380px] lg:h-auto min-h-[300px] flex items-center justify-center bg-slate-100"
+            className="w-full lg:w-[50%] grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-5 items-stretch"
           >
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&auto=format&fit=crop&q=80"
-              alt="Tim Kolaborasi dan Pelatihan Profesional P3I"
-              className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500 rounded-[16px]"
-              referrerPolicy="no-referrer"
-            />
+            {/* Left tall image */}
+            <div className="w-full h-[260px] sm:h-[340px] lg:h-[360px] rounded-[16px] overflow-hidden shadow-sm">
+              <img
+                src={teamImg}
+                alt="Tim Kolaborasi dan Pelatihan Profesional P3I"
+                className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
+            {/* Right stacked images */}
+            <div className="flex flex-col gap-2 sm:gap-5 justify-between h-auto sm:h-[340px] lg:h-[360px]">
+              <div className="w-full h-[120px] sm:h-[158px] lg:h-[168px] rounded-[16px] overflow-hidden shadow-sm">
+                <img
+                  src={workshopImg}
+                  alt="Sesi Diskusi Workshop Pelatihan"
+                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="w-full h-[120px] sm:h-[158px] lg:h-[168px] rounded-[16px] overflow-hidden shadow-sm">
+                <img
+                  src={seminarImg}
+                  alt="Presentasi Seminar dan Pelatihan"
+                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
           </div>
         </div>
 

@@ -10,7 +10,7 @@ export default function VisiMisiSection() {
           className="w-full flex flex-col gap-6 lg:gap-8 px-[32px]"
         >
           {/* Cards Visi & Misi (2 Kolom) */}
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch py-[32px]">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch py-[48px]">
             {/* Card Kiri (Visi) */}
             <div
               id="tentang-kami-visimisi-card-kiri"

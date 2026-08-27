@@ -88,10 +88,10 @@ export default function PengajuanSection() {
   return (
     <section id="pengajuanSection" className="w-full h-auto bg-white">
       <div className="w-full h-auto flex flex-col lg:flex-row">
-        {/* BAGIAN KIRI (Left Panel: 35% Lebar, Padding 32px) */}
+        {/* BAGIAN KIRI (Left Panel: 35% Lebar, Padding 32px & 48px) */}
         <div
           id="inhouse-prosedur-left-panel"
-          className="w-full lg:w-[35%] h-auto bg-[#022859] px-[32px] py-[32px] flex flex-col justify-start text-left shrink-0"
+          className="w-full lg:w-[35%] h-auto bg-[#022859] px-[32px] py-[48px] flex flex-col justify-start text-left shrink-0"
         >
           <span
             id="inhouse-prosedur-badge"
@@ -204,10 +204,10 @@ export default function PengajuanSection() {
           </Box>
         </div>
 
-        {/* BAGIAN KANAN (Right Panel: 65% Lebar, Padding 32px) */}
+        {/* BAGIAN KANAN (Right Panel: 65% Lebar, Padding 32px & 48px) */}
         <div
           id="inhouse-prosedur-right-panel"
-          className="w-full lg:w-[65%] h-auto bg-[#ebfbfa] px-[32px] py-[32px] flex flex-col items-start justify-start text-left"
+          className="w-full lg:w-[65%] h-auto bg-[#ebfbfa] px-[32px] py-[48px] flex flex-col items-start justify-start text-left"
         >
           {/* Badge / Tag Form Permohonan */}
           <span
@@ -243,24 +243,24 @@ export default function PengajuanSection() {
           {/* Form Card Sesuai Desain Gambar */}
           <div
             id="inhouse-prosedur-form-card"
-            className="w-full max-w-2xl bg-white rounded-[12px] px-[24px] py-[32px] shadow-xl shadow-[#022859]/10 border border-white/60 mx-auto"
+            className="w-full max-w-2xl bg-white rounded-[12px] px-[24px] py-[24px] shadow-lg shadow-[#022859]/10 border border-white/60 mx-auto"
           >
             {isSubmitted ? (
               <div
                 id="inhouse-prosedur-form-success"
-                className="py-10 px-4 text-center flex flex-col items-center justify-center animate-fadeIn"
+                className="py-6 px-4 text-center flex flex-col items-center justify-center animate-fadeIn"
               >
-                <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
-                  <CheckCircle2 size={36} />
+                <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mb-3">
+                  <CheckCircle2 size={28} />
                 </div>
                 <h3
-                  className="text-[22px] font-bold text-[#022859] mb-2"
+                  className="text-[20px] font-bold text-[#022859] mb-1.5"
                   style={{ fontFamily: 'Poppins, sans-serif' }}
                 >
                   Permohonan Berhasil Dikirim!
                 </h3>
                 <p
-                  className="text-slate-600 text-[14px] max-w-md mb-6 leading-relaxed"
+                  className="text-slate-600 text-[13.5px] max-w-md mb-4 leading-relaxed"
                   style={{ fontFamily: 'Nunito, sans-serif' }}
                 >
                   Terima kasih, <strong>{formData.namaLengkap || 'Bapak/Ibu'}</strong>. Tim konsultan kami akan segera menghubungi Anda melalui WhatsApp di nomor <strong>{formData.noWhatsapp || '-'}</strong>.
@@ -280,7 +280,7 @@ export default function PengajuanSection() {
                       catatanKebutuhan: '',
                     });
                   }}
-                  className="px-6 py-2.5 bg-[#022859] text-white text-[14px] font-semibold rounded-[12px] hover:bg-[#022859]/90 transition-colors"
+                  className="px-5 py-2 bg-[#022859] text-white text-[13.5px] font-semibold rounded-[10px] hover:bg-[#022859]/90 transition-colors"
                 >
                   Kirim Permohonan Lain
                 </button>
@@ -289,14 +289,14 @@ export default function PengajuanSection() {
               <form
                 id="inhouse-prosedur-actual-form"
                 onSubmit={handleSubmit}
-                className="space-y-4 sm:space-y-5"
+                className="space-y-3 sm:space-y-3.5"
               >
                 {/* Baris 1: Nama Lengkap & Nama Instansi */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="form-nama-lengkap"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       Nama lengkap <span className="text-red-500">*</span>
@@ -309,15 +309,15 @@ export default function PengajuanSection() {
                       value={formData.namaLengkap}
                       onChange={handleInputChange}
                       placeholder="Nama Anda"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
 
-                  <div className="space-y-1.5 text-left">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="form-nama-instansi"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       Nama instansi <span className="text-red-500">*</span>
@@ -330,18 +330,18 @@ export default function PengajuanSection() {
                       value={formData.namaInstansi}
                       onChange={handleInputChange}
                       placeholder="Perusahaan / Lembaga"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
                 </div>
 
                 {/* Baris 2: Email & No. WhatsApp */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="form-email"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       Email <span className="text-red-500">*</span>
@@ -354,15 +354,15 @@ export default function PengajuanSection() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="email@instansi.id"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
 
-                  <div className="space-y-1.5 text-left">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="form-whatsapp"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       No. WhatsApp <span className="text-red-500">*</span>
@@ -375,18 +375,18 @@ export default function PengajuanSection() {
                       value={formData.noWhatsapp}
                       onChange={handleInputChange}
                       placeholder="08xxxxxxxxxx"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
                 </div>
 
                 {/* Baris 3: Jumlah Peserta */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                  <div className="space-y-1.5 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="space-y-1 text-left">
                     <label
                       htmlFor="form-jumlah-peserta"
-                      className="block text-[14px] font-bold text-[#022859]"
+                      className="block text-[13px] font-bold text-[#022859]"
                       style={{ fontFamily: 'Poppins, sans-serif' }}
                     >
                       Jumlah peserta
@@ -398,17 +398,17 @@ export default function PengajuanSection() {
                       value={formData.jumlahPeserta}
                       onChange={handleInputChange}
                       placeholder="mis. 25"
-                      className="w-full h-[48px] px-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
                 </div>
 
                 {/* Baris 4: Catatan Kebutuhan */}
-                <div className="space-y-1.5 text-left">
+                <div className="space-y-1 text-left">
                   <label
                     htmlFor="form-catatan-kebutuhan"
-                    className="block text-[14px] font-bold text-[#022859]"
+                    className="block text-[13px] font-bold text-[#022859]"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     Catatan kebutuhan
@@ -416,21 +416,21 @@ export default function PengajuanSection() {
                   <textarea
                     id="form-catatan-kebutuhan"
                     name="catatanKebutuhan"
-                    rows={4}
+                    rows={2.5}
                     value={formData.catatanKebutuhan}
                     onChange={handleInputChange}
                     placeholder="Ceritakan detail kebutuhan pelatihan, target waktu, dan lokasi pelaksanaan..."
-                    className="w-full p-4 rounded-[12px] border border-slate-200 bg-white text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all resize-none"
+                    className="w-full p-3 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all resize-none h-[72px]"
                     style={{ fontFamily: 'Nunito, sans-serif' }}
                   />
                 </div>
 
                 {/* Tombol Submit */}
-                <div className="pt-2">
+                <div className="pt-1">
                   <button
                     type="submit"
                     id="inhouse-prosedur-btn-submit"
-                    className="w-full h-[52px] bg-[#022859] text-white font-bold text-[15px] sm:text-[16px] rounded-[12px] border border-[#022859] flex items-center justify-center transition-all duration-200 cursor-pointer hover:bg-white hover:text-[#022859] hover:-translate-y-0.5 hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] active:translate-y-0"
+                    className="w-full h-[44px] bg-[#022859] text-white font-bold text-[14.5px] rounded-[10px] border border-[#022859] flex items-center justify-center transition-all duration-200 cursor-pointer hover:bg-white hover:text-[#022859] hover:-translate-y-0.5 hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] active:translate-y-0"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     <span>Kirim permohonan</span>

@@ -10,7 +10,7 @@ export default function MainSection() {
 
   return (
     <section className="w-full h-auto bg-white flex items-center justify-center py-0 px-[48px]">
-      <div className="w-full max-w-[1280px] m-0 px-[32px] py-[32px] flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div className="w-full max-w-[1280px] m-0 px-[32px] py-[48px] flex flex-col lg:flex-row items-center justify-between gap-6">
         {/* Left Column: Text Content (35%) */}
         <div className="w-full lg:w-[35%] flex flex-col items-start justify-center shrink-0">
           {/* Badge Label */}
