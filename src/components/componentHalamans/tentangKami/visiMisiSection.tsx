@@ -14,7 +14,7 @@ export default function VisiMisiSection() {
             {/* Card Kiri (Visi) */}
             <div
               id="tentang-kami-visimisi-card-kiri"
-              className="w-full min-h-[280px] bg-[#1CD690] rounded-[12px] p-[30px] text-[#022859] flex flex-col justify-start shadow-sm"
+              className="w-full min-h-[280px] bg-[#1CD690] rounded-[16px] p-[24px] text-[#022859] flex flex-col justify-start shadow-sm"
             >
               {/* Header Card Kiri: Badge Visi */}
               <div className="mb-[8px] flex items-center justify-start gap-2.5">
@@ -43,7 +43,7 @@ export default function VisiMisiSection() {
             {/* Card Kanan (Misi) */}
             <div
               id="tentang-kami-visimisi-card-kanan"
-              className="w-full min-h-[280px] bg-[#022859] rounded-[12px] p-[30px] text-white flex flex-col justify-start shadow-sm"
+              className="w-full min-h-[280px] bg-[#022859] rounded-[16px] p-[24px] text-white flex flex-col justify-start shadow-sm"
             >
               {/* Header Card Kanan: Badge */}
               <div className="flex items-center justify-end gap-2.5 mb-[8px] w-full">

@@ -51,7 +51,7 @@ export default function CtaSection() {
               id="btn-cta-hubungi-kami"
               type="button"
               onClick={() => navigate('/kontak-kami')}
-              className="px-[24px] py-3.5 bg-[#1cd690] hover:bg-[#18be7f] hover:-translate-y-[2px] text-[#022859] font-bold text-[16px] leading-[24px] rounded-[8px] shadow-lg transition-all duration-200 ease-in-out cursor-pointer whitespace-nowrap active:scale-95"
+              className="px-[24px] py-3.5 bg-[#1cd690] hover:bg-[#18be7f] hover:-translate-y-[2px] text-[#022859] font-bold text-[16px] leading-[24px] rounded-[12px] shadow-lg transition-all duration-200 ease-in-out cursor-pointer whitespace-nowrap active:scale-95"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Hubungi Kami

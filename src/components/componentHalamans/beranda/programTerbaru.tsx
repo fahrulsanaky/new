@@ -9,9 +9,16 @@ export default function ProgramTerbaru() {
       <div className="w-full max-w-7xl mx-0 flex flex-col px-[32px] py-[48px]">
         {/* Header: Title on Top, Description below Title */}
         <div className="flex flex-col items-center text-center mb-8">
+          <span 
+            id="program-terbaru-badge"
+            style={{ fontFamily: 'Poppins, sans-serif' }}
+            className="text-[#1CD690] font-bold text-xs leading-relaxed tracking-wider uppercase inline-block mb-[4px]"
+          >
+            PROGRAM TERBARU
+          </span>
           <h2
             id="program-terbaru-heading"
-            className="text-[32px] leading-[40px] font-bold text-[#022859] tracking-tight w-full max-w-3xl mb-2 text-center"
+            className="text-[32px] leading-[40px] font-bold text-[#022859] tracking-tight w-full max-w-5xl mb-2 text-center"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Temukan Pelatihan yang Siap Membantu Kamu Naik Level
@@ -33,19 +40,21 @@ export default function ProgramTerbaru() {
           {/* Card 1 */}
           <div 
             id="program-terbaru-card-1"
-            className="w-full bg-white rounded-[12px] border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+            className="w-full bg-white rounded-[12px] border border-[#E2E8F0] overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 ease-in-out"
           >
-            {/* 1. Gambar */}
-            <div className="w-full h-48 overflow-hidden bg-slate-100">
-              <img
-                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
-                alt="Fullstack Web & Cloud Engineering"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                referrerPolicy="no-referrer"
-              />
+            {/* 1. Gambar tidak full bleed */}
+            <div className="p-3 pb-0">
+              <div className="w-full h-44 overflow-hidden bg-slate-100 rounded-[8px]">
+                <img
+                  src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"
+                  alt="Fullstack Web & Cloud Engineering"
+                  className="w-full h-full object-cover rounded-[8px]"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
 
-            <div className="p-5 flex flex-col flex-1 justify-between gap-4">
+            <div className="p-6 flex flex-col flex-1 justify-between gap-4">
               <div className="flex flex-col gap-2.5">
                 {/* Judul */}
                 <h3
@@ -68,7 +77,7 @@ export default function ProgramTerbaru() {
               <button
                 type="button"
                 onClick={() => navigate('/program-pelatihan')}
-                className="w-full py-[8px] px-4 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-sm rounded-[8px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95"
+                className="w-full py-[8px] px-4 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-sm rounded-[12px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95"
                 style={{ fontFamily: 'Nunito, sans-serif' }}
               >
                 Lihat Detail Kelas
@@ -79,19 +88,21 @@ export default function ProgramTerbaru() {
           {/* Card 2 */}
           <div 
             id="program-terbaru-card-2"
-            className="w-full bg-white rounded-[12px] border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+            className="w-full bg-white rounded-[12px] border border-[#E2E8F0] overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 ease-in-out"
           >
-            {/* 1. Gambar */}
-            <div className="w-full h-48 overflow-hidden bg-slate-100">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                alt="Strategic Leadership & Executive Management"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                referrerPolicy="no-referrer"
-              />
+            {/* 1. Gambar tidak full bleed */}
+            <div className="p-3 pb-0">
+              <div className="w-full h-44 overflow-hidden bg-slate-100 rounded-[8px]">
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                  alt="Strategic Leadership & Executive Management"
+                  className="w-full h-full object-cover rounded-[8px]"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
 
-            <div className="p-5 flex flex-col flex-1 justify-between gap-4">
+            <div className="p-6 flex flex-col flex-1 justify-between gap-4">
               <div className="flex flex-col gap-2.5">
                 {/* Judul */}
                 <h3
@@ -114,7 +125,7 @@ export default function ProgramTerbaru() {
               <button
                 type="button"
                 onClick={() => navigate('/program-pelatihan')}
-                className="w-full py-[8px] px-4 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-sm rounded-[8px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95"
+                className="w-full py-[8px] px-4 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-sm rounded-[12px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95"
                 style={{ fontFamily: 'Nunito, sans-serif' }}
               >
                 Lihat Detail Kelas
@@ -125,19 +136,21 @@ export default function ProgramTerbaru() {
           {/* Card 3 */}
           <div 
             id="program-terbaru-card-3"
-            className="w-full bg-white rounded-[12px] border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+            className="w-full bg-white rounded-[12px] border border-[#E2E8F0] overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 ease-in-out"
           >
-            {/* 1. Gambar */}
-            <div className="w-full h-48 overflow-hidden bg-slate-100">
-              <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
-                alt="Business Intelligence & Data Analytics"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                referrerPolicy="no-referrer"
-              />
+            {/* 1. Gambar tidak full bleed */}
+            <div className="p-3 pb-0">
+              <div className="w-full h-44 overflow-hidden bg-slate-100 rounded-[8px]">
+                <img
+                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+                  alt="Business Intelligence & Data Analytics"
+                  className="w-full h-full object-cover rounded-[8px]"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
 
-            <div className="p-5 flex flex-col flex-1 justify-between gap-4">
+            <div className="p-6 flex flex-col flex-1 justify-between gap-4">
               <div className="flex flex-col gap-2.5">
                 {/* Judul */}
                 <h3
@@ -160,7 +173,7 @@ export default function ProgramTerbaru() {
               <button
                 type="button"
                 onClick={() => navigate('/program-pelatihan')}
-                className="w-full py-[8px] px-4 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-sm rounded-[8px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95"
+                className="w-full py-[8px] px-4 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-sm rounded-[12px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95"
                 style={{ fontFamily: 'Nunito, sans-serif' }}
               >
                 Lihat Detail Kelas

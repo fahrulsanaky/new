@@ -67,7 +67,7 @@ export default function MainSection() {
               <img
                 src={corporateTrainingImg}
                 alt="Program In-House Training Profesional P3I"
-                className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover object-center"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -78,7 +78,7 @@ export default function MainSection() {
                 <img
                   src={groupDiscussionImg}
                   alt="Diskusi Kelompok In-House Training"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -86,7 +86,7 @@ export default function MainSection() {
                 <img
                   src={presentationImg}
                   alt="Sesi Pemaparan Materi Pelatihan"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center"
                   referrerPolicy="no-referrer"
                 />
               </div>

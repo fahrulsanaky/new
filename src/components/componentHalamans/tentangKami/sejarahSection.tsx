@@ -3,12 +3,12 @@ import { Route } from 'lucide-react';
 
 export default function SejarahSection() {
   return (
-    <section id="sejarahSection" className="w-full h-auto bg-white flex items-center justify-center py-[48px] px-[48px]">
+    <section id="sejarahSection" className="w-full h-auto bg-[#1cd690] flex items-center justify-center py-[48px] px-[48px]">
       <div className="w-full max-w-[1196px] mx-auto flex flex-col items-center justify-center gap-6 lg:gap-8">
         {/* Main Blue Banner Container */}
         <div
           id="tentang-kami-sejarah-card"
-          className="w-full max-w-[1196px] min-h-[360px] lg:min-h-[380px] mx-auto bg-[#022859] rounded-[16px] px-[40px] py-[52px] text-white flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12 shadow-md"
+          className="w-full max-w-[1196px] min-h-[360px] lg:min-h-[380px] mx-auto bg-[#022859] rounded-[16px] px-[24px] py-[48px] text-white flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12 shadow-md"
         >
           {/* Left Column: Sejarah Badge (Top) & Heading */}
           <div

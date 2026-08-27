@@ -36,23 +36,30 @@ const testimonialsData = [
 
 export default function Testimoni() {
   return (
-    <section className="w-full h-auto bg-white flex items-center justify-center py-[48px] px-[48px]">
+    <section className="w-full h-auto bg-[#1cd690] flex items-center justify-center py-[48px] px-[48px]">
       <div
         id="testimoni-card-1"
-        className="w-full max-w-[1196px] bg-[#022859] rounded-[16px] p-[32px] flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 text-left"
+        className="w-full max-w-[1196px] bg-[#022859] rounded-[16px] px-[24px] py-[32px] flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12 text-left"
       >
         {/* Kolom Kiri (Lebar 30%) */}
-        <div className="w-full lg:w-[30%] shrink-0 flex flex-col gap-4 text-left">
-          <div id="testimoni-quote-icon-container" className="text-[#1CD690] flex items-center">
+        <div className="w-full lg:w-[30%] shrink-0 flex flex-col gap-2.5 text-left">
+          <div id="testimoni-quote-icon-container" className="text-[#1CD690] flex items-center mb-1">
             <Quote
               id="testimoni-quote-icon"
-              size={56}
+              size={36}
               className="text-[#1CD690]"
             />
           </div>
+          <span
+            id="testimoni-badge"
+            style={{ fontFamily: 'Poppins, sans-serif' }}
+            className="text-[#1CD690] font-bold text-xs leading-relaxed tracking-wider uppercase inline-block mb-0"
+          >
+            TESTIMONI
+          </span>
           <h2
             id="testimoni-card-title"
-            className="text-[32px] leading-[40px] font-bold text-white text-left"
+            className="text-[32px] leading-[40px] font-bold text-white text-left mb-1"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Cerita Mereka yang Sudah Belajar Bersama P3I
@@ -77,7 +84,7 @@ export default function Testimoni() {
               <div 
                 key={item.id}
                 id={`testimoni-subcard-${item.id}`} 
-                className={`w-full rounded-[16px] p-[25px] flex flex-col text-left shadow-sm justify-between ${
+                className={`w-full rounded-[12px] p-[24px] flex flex-col text-left shadow-sm justify-between transition-all duration-300 ease-in-out hover:-translate-y-1.5 hover:shadow-lg ${
                   isOdd ? 'bg-[#1CD690]' : 'bg-white'
                 }`}
               >

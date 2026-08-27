@@ -14,7 +14,7 @@ export default function VisiMisi() {
             {/* Visi Badge / Title */}
             <div className="mb-[8px] flex items-center justify-start gap-2.5">
               <span id="visi-icon-wrapper" className="text-[#022859] flex items-center">
-                <Telescope size={28} className="text-[#022859]" />
+                <Telescope size={20} className="text-[#022859]" />
               </span>
               <span
                 id="visi-label-badge"
@@ -99,7 +99,7 @@ export default function VisiMisi() {
         {/* Kolom Kanan: Card Biru (About Us / Nilai Kami) */}
         <div
           id="pencapaian-right-blue-card"
-          className="w-full lg:w-1/2 bg-[#022859] rounded-[12px] p-[30px] text-white flex flex-col justify-start"
+          className="w-full lg:w-1/2 bg-[#022859] rounded-[16px] p-[24px] text-white flex flex-col justify-start"
         >
           {/* Header Card Kanan: Badge */}
           <div className="flex items-center justify-end gap-2.5 mb-[8px] w-full">
@@ -113,7 +113,7 @@ export default function VisiMisi() {
             <span id="misi-icon-wrapper" className="text-[#1CD690] flex items-center">
               <Rocket
                 id="misi-rocket-icon"
-                size={26}
+                size={20}
                 className="text-[#1CD690]"
               />
             </span>

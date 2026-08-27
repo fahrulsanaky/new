@@ -36,7 +36,7 @@ const keunggulanData = [
 
 export default function KeunggulanSection() {
   return (
-    <section id="keunggulanSection" className="w-full bg-[#ffffff] flex items-center justify-center py-[48px] px-[48px]">
+    <section id="keunggulanSection" className="w-full bg-[#1cd690] flex items-center justify-center py-[48px] px-[48px]">
       <div
         id="inhouse-keunggulan-card-main"
         className="w-full max-w-[1196px] bg-[#022859] rounded-[16px] px-[32px] py-[42px] flex flex-col items-start justify-start gap-8 lg:gap-10 text-left"
@@ -79,7 +79,7 @@ export default function KeunggulanSection() {
               <div
                 key={item.id}
                 id={`inhouse-keunggulan-subcard-${item.id}`}
-                className={`w-full rounded-[16px] p-[25px] flex flex-col text-left shadow-sm justify-between ${
+                className={`w-full rounded-[12px] p-[25px] flex flex-col text-left shadow-sm justify-between transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-lg ${
                   isOdd ? 'bg-[#1CD690]' : 'bg-white'
                 }`}
               >

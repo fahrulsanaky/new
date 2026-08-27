@@ -165,99 +165,96 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
   return (
     <section
       id="pelatihan-section"
-      className="w-full min-h-screen bg-white p-[50px] box-border border-0 relative flex flex-col justify-start"
+      className="w-full min-h-screen bg-[#F5F5F5] box-border border-0 relative flex flex-col justify-start py-[48px] pl-[24px] pr-[24px]"
       style={{
-        backgroundColor: '#ffffff',
+        backgroundColor: '#F5F5F5',
         minHeight: '100vh',
-        padding: '50px',
+        paddingTop: '48px',
+        paddingBottom: '48px',
+        paddingLeft: '24px',
         border: 'none',
       }}
     >
       <div id="pelatihan-container" className="w-full max-w-7xl mx-auto flex flex-col">
-        {/* Header Area: Judul & Input Field Pencarian */}
+        {/* Header Area: Judul */}
         <div 
           id="pelatihan-header-wrapper" 
-          className="w-full flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8"
+          className="w-full flex flex-col md:flex-row md:items-center justify-between gap-6 py-2"
+          style={{
+            paddingTop: '8px',
+            paddingBottom: '8px',
+          }}
         >
           {/* 1 Judul: Program Pelatihan */}
           <h2
             id="pelatihan-main-title"
-            className="text-[32px] sm:text-[36px] leading-[44px] font-bold text-[#022859] tracking-tight"
+            className="text-[32px] leading-[40px] font-bold text-[#022859] tracking-tight"
             style={{
               fontFamily: 'Poppins, sans-serif',
+              fontSize: '32px',
+              lineHeight: '40px',
+              fontWeight: 'bold',
               color: '#022859',
             }}
           >
             Program Pelatihan
           </h2>
-
-          {/* Input Field Pencarian */}
-          <div 
-            id="pelatihan-search-container" 
-            className="w-full md:w-[360px] lg:w-[400px] relative"
-          >
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
-              <Search size={20} />
-            </div>
-            <input
-              type="text"
-              id="pelatihan-search-input"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari program pelatihan..."
-              className="w-full h-[48px] pl-11 pr-4 rounded-[12px] border border-slate-200 bg-slate-50/50 text-[14px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-[#022859] focus:ring-1 focus:ring-[#022859] transition-all"
-              style={{
-                fontFamily: 'Nunito, sans-serif',
-              }}
-            />
-          </div>
         </div>
 
         {/* Konten Area Pelatihan: Dibagi 2 Bagian Kiri & Kanan */}
         <div 
           id="pelatihan-content-area" 
-          className="w-full pt-4 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+          className="w-full pt-0 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+          style={{
+            paddingTop: '0px',
+          }}
         >
           {/* Kolom Kiri: Filter */}
           <div 
             id="pelatihan-filter-column" 
             className="w-full lg:col-span-4 xl:col-span-3 flex flex-col"
           >
-            <div className="flex items-center justify-between mb-4">
-              <h3
-                id="pelatihan-filter-subtitle"
-                className="text-[20px] leading-[28px] font-bold text-[#022859] border-0"
-                style={{
-                  fontFamily: 'Poppins, sans-serif',
-                  color: '#022859',
-                  borderBottom: 'none',
-                }}
-              >
-                Filter
-              </h3>
-
-              {(!selectedKategori.includes('semua') || !selectedMetode.includes('semua') || !selectedLokasi.includes('semua') || searchQuery !== '') && (
-                <button
-                  type="button"
-                  onClick={handleResetFilter}
-                  className="flex items-center gap-1.5 text-[12px] font-semibold text-[#022859] hover:text-[#1CD690] transition-colors cursor-pointer"
-                  style={{ fontFamily: 'Nunito, sans-serif' }}
-                >
-                  <RotateCcw size={14} />
-                  <span>Reset Filter</span>
-                </button>
-              )}
-            </div>
-            
-            {/* 1 Kotak di Bawah Subjudul */}
+            {/* 1 Kotak Filter Box */}
             <div
               id="pelatihan-filter-box"
-              className="w-full rounded-[12px] bg-[#022859] p-4 flex flex-col gap-4 shadow-md"
+              className="w-full rounded-[16px] bg-[#022859] p-4 flex flex-col gap-4 shadow-md"
               style={{
-                borderRadius: '12px',
+                borderRadius: '16px',
                 backgroundColor: '#022859',
               }}
             >
+              {/* Header: Judul Filter & Tombol Reset berada di dalam div bagian atas */}
+              <div 
+                className="flex items-center justify-between pb-0"
+                style={{
+                  paddingBottom: '0px',
+                  fontFamily: 'Poppins, sans-serif',
+                }}
+              >
+                <h3
+                  id="pelatihan-filter-subtitle"
+                  className="text-[18px] leading-[26px] font-bold text-white border-0"
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    color: '#ffffff',
+                    borderBottom: 'none',
+                  }}
+                >
+                  Filter
+                </h3>
+
+                {(!selectedKategori.includes('semua') || !selectedMetode.includes('semua') || !selectedLokasi.includes('semua') || searchQuery !== '') && (
+                  <button
+                    type="button"
+                    onClick={handleResetFilter}
+                    className="flex items-center gap-1.5 text-[12px] font-semibold text-emerald-300 hover:text-white transition-colors cursor-pointer"
+                    style={{ fontFamily: 'Nunito, sans-serif' }}
+                  >
+                    <RotateCcw size={14} />
+                    <span>Reset Filter</span>
+                  </button>
+                )}
+              </div>
               {/* Kotak Putih 1: Kategori (Dropdown) */}
               <div
                 id="pelatihan-filter-inner-box-1"
@@ -461,14 +458,33 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
             </div>
           </div>
 
-          {/* Kolom Kanan: Card Pelatihan yang Sudah Terfilter Secara Real-time */}
+          {/* Kolom Kanan: Header Search + Card Pelatihan */}
           <div 
             id="pelatihan-list-column" 
-            className="w-full lg:col-span-8 xl:col-span-9 flex flex-col mt-[50px]"
-            style={{
-              marginTop: '50px',
-            }}
+            className="w-full lg:col-span-8 xl:col-span-9 flex flex-col gap-6"
           >
+            {/* Input Search Posisi di Kanan Atas */}
+            <div className="w-full flex justify-end">
+              <div 
+                id="pelatihan-search-container" 
+                className="w-full sm:w-[320px] md:w-[360px] relative"
+              >
+                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                  <Search size={18} />
+                </div>
+                <input
+                  type="text"
+                  id="pelatihan-search-input"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Cari program pelatihan..."
+                  className="w-full h-[42px] pl-10 pr-4 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-[#022859] focus:ring-1 focus:ring-[#022859] shadow-sm transition-all"
+                  style={{
+                    fontFamily: 'Nunito, sans-serif',
+                  }}
+                />
+              </div>
+            </div>
             {filteredCards.length > 0 ? (
               <div className="flex flex-col gap-8">
                 {/* Grid Kartu Pelatihan */}
@@ -477,23 +493,25 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                     <div
                       key={card.id}
                       id={`pelatihan-card-${card.id}`}
-                      className="w-full bg-white rounded-[12px] border border-slate-200 overflow-hidden flex flex-col justify-between"
+                      className="w-full bg-white rounded-[16px] border border-slate-200 overflow-hidden flex flex-col justify-between"
                       style={{
-                        borderRadius: '12px',
+                        borderRadius: '16px',
                         backgroundColor: '#ffffff',
                       }}
                     >
-                      {/* 1. Gambar */}
-                      <div className="w-full h-40 overflow-hidden bg-slate-100 shrink-0">
-                        <img
-                          src={card.image}
-                          alt={card.title}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          referrerPolicy="no-referrer"
-                          onError={(e) => {
-                            e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
-                          }}
-                        />
+                      {/* 1. Gambar dengan padding & rounded (tidak full bleed) */}
+                      <div className="p-3 pb-0">
+                        <div className="w-full h-36 overflow-hidden bg-slate-100 rounded-[8px]">
+                          <img
+                            src={card.image}
+                            alt={card.title}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 rounded-[8px]"
+                            referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
+                            }}
+                          />
+                        </div>
                       </div>
 
                       {/* Konten Text & Tombol */}
@@ -539,7 +557,7 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                         <button
                           type="button"
                           onClick={() => setActivePage && setActivePage('detail-pelatihan')}
-                          className="w-full py-[8px] px-3 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-[13px] rounded-[8px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95 text-center flex items-center justify-center"
+                          className="w-full py-[8px] px-3 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-[13px] rounded-[12px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95 text-center flex items-center justify-center"
                           style={{ fontFamily: 'Nunito, sans-serif' }}
                         >
                           Lihat Detail Kelas
@@ -552,11 +570,11 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                 {/* Komponen Pagination Desain Presisi sesuai Permintaan dan Gambar */}
                 <div
                   id="pelatihan-pagination-wrapper"
-                  className="w-full bg-white flex items-center justify-between p-3 select-none"
+                  className="w-full bg-[#f5f5f5] flex items-center justify-between p-3 select-none"
                   style={{
                     borderWidth: '0px',
                     borderRadius: '12px',
-                    backgroundColor: '#ffffff',
+                    backgroundColor: '#f5f5f5',
                   }}
                 >
                   {/* Tombol Previous */}
@@ -565,14 +583,15 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                     id="pelatihan-pagination-prev"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className={`group w-10 h-10 flex items-center justify-center rounded-[8px] transition-all duration-200 ${
+                    className={`group w-10 h-10 flex items-center justify-center rounded-[12px] transition-all duration-200 ${
                       currentPage === 1
-                        ? 'cursor-not-allowed border border-[#e2e8f0] bg-[#f8fafc] text-[#cbd5e1]'
-                        : 'cursor-pointer border border-[#022859] bg-white text-[#022859] hover:!bg-[#022859] hover:!border-[#022859]'
+                        ? 'cursor-not-allowed border border-[#e2e8f0] bg-[#f5f5f5] text-[#cbd5e1]'
+                        : 'cursor-pointer border border-[#022859] bg-[#f5f5f5] text-[#022859] hover:!bg-[#022859] hover:!border-[#022859]'
                     }`}
                     style={{
                       fontFamily: 'Nunito, sans-serif',
-                      borderRadius: '8px',
+                      borderRadius: '12px',
+                      backgroundColor: '#f5f5f5',
                     }}
                   >
                     <ArrowLeft
@@ -631,14 +650,15 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                     id="pelatihan-pagination-next"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className={`group w-10 h-10 flex items-center justify-center rounded-[8px] transition-all duration-200 ${
+                    className={`group w-10 h-10 flex items-center justify-center rounded-[12px] transition-all duration-200 ${
                       currentPage === totalPages
-                        ? 'cursor-not-allowed border border-[#e2e8f0] bg-[#f8fafc] text-[#cbd5e1]'
-                        : 'cursor-pointer border border-[#022859] bg-white text-[#022859] hover:!bg-[#022859] hover:!border-[#022859]'
+                        ? 'cursor-not-allowed border border-[#e2e8f0] bg-[#f5f5f5] text-[#cbd5e1]'
+                        : 'cursor-pointer border border-[#022859] bg-[#f5f5f5] text-[#022859] hover:!bg-[#022859] hover:!border-[#022859]'
                     }`}
                     style={{
                       fontFamily: 'Nunito, sans-serif',
-                      borderRadius: '8px',
+                      borderRadius: '12px',
+                      backgroundColor: '#f5f5f5',
                     }}
                   >
                     <ArrowRight

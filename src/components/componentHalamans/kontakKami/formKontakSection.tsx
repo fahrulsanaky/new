@@ -71,7 +71,7 @@ export default function FormKontakSection() {
         >
           <div
             id="form-kontak-card"
-            className="w-full max-w-2xl bg-white rounded-[12px] px-[24px] py-[24px] shadow-lg shadow-[#022859]/10 border border-white/60"
+            className="w-full max-w-2xl bg-white rounded-[16px] px-[24px] py-[24px] shadow-lg shadow-[#022859]/10 border border-white/60"
           >
             {isSubmitted ? (
               <div
@@ -107,7 +107,7 @@ export default function FormKontakSection() {
                       pesan: '',
                     });
                   }}
-                  className="px-5 py-2 bg-[#022859] text-white text-[13.5px] font-semibold rounded-[10px] hover:bg-[#022859]/90 transition-colors cursor-pointer"
+                  className="px-5 py-2 bg-[#022859] text-white text-[13.5px] font-semibold rounded-[12px] hover:bg-[#022859]/90 transition-colors cursor-pointer"
                 >
                   Kirim Pesan Lain
                 </button>
@@ -136,7 +136,7 @@ export default function FormKontakSection() {
                       value={formData.namaDepan}
                       onChange={handleInputChange}
                       placeholder="Nama depan Anda"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -157,7 +157,7 @@ export default function FormKontakSection() {
                       value={formData.namaBelakang}
                       onChange={handleInputChange}
                       placeholder="Nama belakang Anda"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -181,7 +181,7 @@ export default function FormKontakSection() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="email@anda.id"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -202,7 +202,7 @@ export default function FormKontakSection() {
                       value={formData.noWhatsapp}
                       onChange={handleInputChange}
                       placeholder="08xxxxxxxxxx"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -226,7 +226,7 @@ export default function FormKontakSection() {
                       value={formData.subjek}
                       onChange={handleInputChange}
                       placeholder="Subjek pertanyaan atau topik"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -249,7 +249,7 @@ export default function FormKontakSection() {
                     value={formData.pesan}
                     onChange={handleInputChange}
                     placeholder="Tuliskan pesan lengkap atau pertanyaan Anda di sini..."
-                    className="w-full p-3 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all resize-none h-[72px]"
+                    className="w-full p-3 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all resize-none h-[72px]"
                     style={{ fontFamily: 'Nunito, sans-serif' }}
                   />
                 </div>
@@ -259,7 +259,7 @@ export default function FormKontakSection() {
                   <button
                     type="submit"
                     id="kontak-form-btn-submit"
-                    className="w-full h-[44px] bg-[#022859] text-white font-bold text-[14.5px] rounded-[10px] border border-[#022859] flex items-center justify-center transition-all duration-200 cursor-pointer hover:bg-white hover:text-[#022859] hover:-translate-y-0.5 hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] active:translate-y-0"
+                    className="w-full h-[44px] bg-[#022859] text-white font-bold text-[14.5px] rounded-[12px] border border-[#022859] flex items-center justify-center transition-all duration-200 cursor-pointer hover:bg-white hover:text-[#022859] hover:-translate-y-0.5 hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] active:translate-y-0"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     <span>Kirim</span>

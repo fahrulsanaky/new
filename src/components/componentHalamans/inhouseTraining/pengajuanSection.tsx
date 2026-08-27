@@ -13,7 +13,7 @@ function CustomStepIcon(props: StepIconProps) {
 
   return (
     <div
-      className={`w-7 h-7 flex items-center justify-center rounded-[8px] text-[12px] leading-[18px] font-bold transition-all duration-200 ${
+      className={`w-7 h-7 flex items-center justify-center rounded-[12px] text-[12px] leading-[18px] font-bold transition-all duration-200 ${
         completed || active
           ? 'bg-[#1CD690] text-[#022859] shadow-sm'
           : 'bg-white/20 text-white/90 border border-white/20'
@@ -207,7 +207,7 @@ export default function PengajuanSection() {
         {/* BAGIAN KANAN (Right Panel: 65% Lebar, Padding 32px & 48px) */}
         <div
           id="inhouse-prosedur-right-panel"
-          className="w-full lg:w-[65%] h-auto bg-[#ebfbfa] px-[32px] py-[48px] flex flex-col items-start justify-start text-left"
+          className="w-full lg:w-[65%] h-auto bg-[#f5f5f5] px-[32px] py-[48px] flex flex-col items-start justify-start text-left"
         >
           {/* Badge / Tag Form Permohonan */}
           <span
@@ -243,7 +243,7 @@ export default function PengajuanSection() {
           {/* Form Card Sesuai Desain Gambar */}
           <div
             id="inhouse-prosedur-form-card"
-            className="w-full max-w-2xl bg-white rounded-[12px] px-[24px] py-[24px] shadow-lg shadow-[#022859]/10 border border-white/60 mx-auto"
+            className="w-full max-w-2xl bg-white rounded-[16px] px-[24px] py-[24px] shadow-lg shadow-[#022859]/10 border border-white/60 mx-auto"
           >
             {isSubmitted ? (
               <div
@@ -309,7 +309,7 @@ export default function PengajuanSection() {
                       value={formData.namaLengkap}
                       onChange={handleInputChange}
                       placeholder="Nama Anda"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -330,7 +330,7 @@ export default function PengajuanSection() {
                       value={formData.namaInstansi}
                       onChange={handleInputChange}
                       placeholder="Perusahaan / Lembaga"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -354,7 +354,7 @@ export default function PengajuanSection() {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="email@instansi.id"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -375,7 +375,7 @@ export default function PengajuanSection() {
                       value={formData.noWhatsapp}
                       onChange={handleInputChange}
                       placeholder="08xxxxxxxxxx"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -398,7 +398,7 @@ export default function PengajuanSection() {
                       value={formData.jumlahPeserta}
                       onChange={handleInputChange}
                       placeholder="mis. 25"
-                      className="w-full h-[40px] px-3.5 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
+                      className="w-full h-[40px] px-3.5 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all"
                       style={{ fontFamily: 'Nunito, sans-serif' }}
                     />
                   </div>
@@ -420,7 +420,7 @@ export default function PengajuanSection() {
                     value={formData.catatanKebutuhan}
                     onChange={handleInputChange}
                     placeholder="Ceritakan detail kebutuhan pelatihan, target waktu, dan lokasi pelaksanaan..."
-                    className="w-full p-3 rounded-[10px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all resize-none h-[72px]"
+                    className="w-full p-3 rounded-[12px] border border-slate-200 bg-white text-[13.5px] text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-0 focus:shadow-none focus:border-[#022859] transition-all resize-none h-[72px]"
                     style={{ fontFamily: 'Nunito, sans-serif' }}
                   />
                 </div>
@@ -430,7 +430,7 @@ export default function PengajuanSection() {
                   <button
                     type="submit"
                     id="inhouse-prosedur-btn-submit"
-                    className="w-full h-[44px] bg-[#022859] text-white font-bold text-[14.5px] rounded-[10px] border border-[#022859] flex items-center justify-center transition-all duration-200 cursor-pointer hover:bg-white hover:text-[#022859] hover:-translate-y-0.5 hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] active:translate-y-0"
+                    className="w-full h-[44px] bg-[#022859] text-white font-bold text-[14.5px] rounded-[12px] border border-[#022859] flex items-center justify-center transition-all duration-200 cursor-pointer hover:bg-white hover:text-[#022859] hover:-translate-y-0.5 hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] active:translate-y-0"
                     style={{ fontFamily: 'Poppins, sans-serif' }}
                   >
                     <span>Kirim permohonan</span>

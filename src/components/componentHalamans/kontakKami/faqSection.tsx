@@ -72,10 +72,10 @@ export default function FaqSection() {
               <div
                 key={item.id}
                 id={item.id}
-                className="w-full transition-all duration-300 rounded-[12px] overflow-hidden border-0 shadow-none px-6 py-5 cursor-pointer"
+                className="w-full transition-all duration-300 rounded-[16px] overflow-hidden border-0 shadow-none px-6 py-5 cursor-pointer"
                 style={{
                   backgroundColor: isOpen ? '#022859' : '#1cd690',
-                  borderRadius: '12px',
+                  borderRadius: '16px',
                 }}
                 onClick={() => !isOpen && toggleItem(item.id)}
               >

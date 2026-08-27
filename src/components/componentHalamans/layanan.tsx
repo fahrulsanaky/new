@@ -72,14 +72,14 @@ export default function Layanan() {
           {/* Card Kiri: Pelatihan */}
           <div
             id="layanan-card-pelatihan"
-            className="bg-white rounded-[12px] p-[25px] border border-slate-100 flex flex-col items-start justify-start gap-5 shadow-sm"
+            className="bg-white rounded-[16px] p-[24px] border border-slate-100 flex flex-col items-start justify-start gap-5 shadow-sm"
           >
             <div className="flex flex-col items-start mb-0 w-full">
               <div className="flex items-center justify-start gap-3 w-full mb-[8px]">
                 <span id="layanan-pelatihan-icon-wrapper" className="text-[#1CD690] flex items-center">
                   <GraduationCap
                     id="layanan-pelatihan-icon"
-                    size={32}
+                    size={22}
                     className="text-[#1CD690]"
                   />
                 </span>
@@ -101,7 +101,7 @@ export default function Layanan() {
               type="button"
               onClick={() => navigate('/program-pelatihan')}
               style={{ fontFamily: 'Nunito, sans-serif' }}
-              className="inline-flex items-center justify-center px-[20px] py-[10px] rounded-[8px] bg-[#ffffff] border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] font-bold text-[15px] leading-[20px] no-underline transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
+              className="inline-flex items-center justify-center px-[20px] py-[10px] rounded-[12px] bg-[#ffffff] border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] font-bold text-[15px] leading-[20px] no-underline transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
             >
               Jelajahi Kelas
             </button>
@@ -110,14 +110,14 @@ export default function Layanan() {
           {/* Card Kanan: In-House Training */}
           <div
             id="layanan-card-inhouse"
-            className="bg-white rounded-[12px] p-[25px] border border-slate-100 flex flex-col items-start justify-start gap-5 shadow-sm"
+            className="bg-white rounded-[16px] p-[24px] border border-slate-100 flex flex-col items-start justify-start gap-5 shadow-sm"
           >
             <div className="flex flex-col items-start mb-0 w-full">
               <div className="flex items-center justify-start gap-3 w-full mb-[8px]">
                 <span id="layanan-inhouse-icon-wrapper" className="text-[#1CD690] flex items-center">
                   <Building2
                     id="layanan-inhouse-icon"
-                    size={32}
+                    size={22}
                     className="text-[#1CD690]"
                   />
                 </span>
@@ -139,7 +139,7 @@ export default function Layanan() {
               type="button"
               onClick={() => navigate('/inhouse-training')}
               style={{ fontFamily: 'Nunito, sans-serif' }}
-              className="inline-flex items-center justify-center px-[20px] py-[10px] rounded-[8px] bg-[#ffffff] border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] font-bold text-[15px] leading-[20px] no-underline transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
+              className="inline-flex items-center justify-center px-[20px] py-[10px] rounded-[12px] bg-[#ffffff] border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] font-bold text-[15px] leading-[20px] no-underline transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
             >
               Hubungi Kami
             </button>

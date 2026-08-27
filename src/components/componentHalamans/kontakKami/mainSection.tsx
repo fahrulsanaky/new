@@ -9,6 +9,20 @@ export default function MainSection() {
           id="informasi-left-text-wrapper"
           className="w-full md:w-[35%] flex flex-col justify-center text-left"
         >
+          {/* Badge Label */}
+          <span
+            id="kontak-kami-label-badge"
+            className="text-[#1cd690] font-bold text-[12px] leading-[19.5px] tracking-wider uppercase inline-block mb-[4px]"
+            style={{
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '12px',
+              lineHeight: '19.5px',
+              color: '#1cd690',
+            }}
+          >
+            Kontak Kami
+          </span>
+
           <h2
             className="text-[32px] leading-[40px] font-bold text-[#022859] mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}

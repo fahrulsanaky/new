@@ -62,7 +62,7 @@ export default function MainSection() {
                 id="tentang-kami-btn-legalitas"
                 type="button"
                 style={{ fontFamily: 'Nunito, sans-serif' }}
-                className="inline-flex items-center justify-center px-[20px] py-[10px] rounded-[8px] bg-[#ffffff] border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] font-bold text-[15px] leading-[20px] no-underline transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
+                className="inline-flex items-center justify-center px-[20px] py-[10px] rounded-[12px] bg-[#ffffff] border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] font-bold text-[15px] leading-[20px] no-underline transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
               >
                 Legalitas Lembaga
               </button>
@@ -70,7 +70,7 @@ export default function MainSection() {
                 id="tentang-kami-btn-filosofi-logo"
                 type="button"
                 style={{ fontFamily: 'Nunito, sans-serif' }}
-                className="inline-flex items-center justify-center px-[20px] py-[10px] rounded-[8px] bg-[#ffffff] border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] font-bold text-[15px] leading-[20px] no-underline transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
+                className="inline-flex items-center justify-center px-[20px] py-[10px] rounded-[12px] bg-[#ffffff] border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] font-bold text-[15px] leading-[20px] no-underline transition-all duration-200 ease-in-out cursor-pointer shadow-sm"
               >
                 Filosofi Logo
               </button>
@@ -87,7 +87,7 @@ export default function MainSection() {
               <img
                 src={teamImg}
                 alt="Tim Kolaborasi dan Pelatihan Profesional P3I"
-                className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover object-center"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -98,7 +98,7 @@ export default function MainSection() {
                 <img
                   src={workshopImg}
                   alt="Sesi Diskusi Workshop Pelatihan"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -106,7 +106,7 @@ export default function MainSection() {
                 <img
                   src={seminarImg}
                   alt="Presentasi Seminar dan Pelatihan"
-                  className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center"
                   referrerPolicy="no-referrer"
                 />
               </div>

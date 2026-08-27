@@ -155,14 +155,14 @@ export default function Footer() {
           <p style={{ fontFamily: 'Nunito, sans-serif' }}>
             Copyright@2026 - Pusat Pengembangan Profesi Indonesia (P3I).
           </p>
-          {/* Ikon Sosial Media */}
+            {/* Ikon Sosial Media */}
             <div className="flex items-center gap-3 text-slate-300">
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-[8px] bg-white/5 hover:bg-[#1cd690]/20 flex items-center justify-center text-[#EBFBFA] hover:text-[#1cd690] border border-white/10 hover:border-[#1cd690]/40 transition-all duration-200"
+                className="w-9 h-9 rounded-[12px] bg-white/5 hover:bg-[#1cd690]/20 flex items-center justify-center text-[#EBFBFA] hover:text-[#1cd690] border border-white/10 hover:border-[#1cd690]/40 transition-all duration-200 transform hover:-translate-y-1 hover:shadow-md"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -171,7 +171,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="X (Twitter)"
-                className="w-9 h-9 rounded-[8px] bg-white/5 hover:bg-[#1cd690]/20 flex items-center justify-center text-[#EBFBFA] hover:text-[#1cd690] border border-white/10 hover:border-[#1cd690]/40 transition-all duration-200"
+                className="w-9 h-9 rounded-[12px] bg-white/5 hover:bg-[#1cd690]/20 flex items-center justify-center text-[#EBFBFA] hover:text-[#1cd690] border border-white/10 hover:border-[#1cd690]/40 transition-all duration-200 transform hover:-translate-y-1 hover:shadow-md"
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -180,7 +180,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="w-9 h-9 rounded-[8px] bg-white/5 hover:bg-[#1cd690]/20 flex items-center justify-center text-[#EBFBFA] hover:text-[#1cd690] border border-white/10 hover:border-[#1cd690]/40 transition-all duration-200"
+                className="w-9 h-9 rounded-[12px] bg-white/5 hover:bg-[#1cd690]/20 flex items-center justify-center text-[#EBFBFA] hover:text-[#1cd690] border border-white/10 hover:border-[#1cd690]/40 transition-all duration-200 transform hover:-translate-y-1 hover:shadow-md"
               >
                 <Youtube className="w-4 h-4" />
               </a>
@@ -189,7 +189,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Telegram"
-                className="w-9 h-9 rounded-[8px] bg-white/5 hover:bg-[#1cd690]/20 flex items-center justify-center text-[#EBFBFA] hover:text-[#1cd690] border border-white/10 hover:border-[#1cd690]/40 transition-all duration-200"
+                className="w-9 h-9 rounded-[12px] bg-white/5 hover:bg-[#1cd690]/20 flex items-center justify-center text-[#EBFBFA] hover:text-[#1cd690] border border-white/10 hover:border-[#1cd690]/40 transition-all duration-200 transform hover:-translate-y-1 hover:shadow-md"
               >
                 <Send className="w-4 h-4" />
               </a>

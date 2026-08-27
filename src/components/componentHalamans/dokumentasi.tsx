@@ -65,6 +65,13 @@ export default function Dokumentasi() {
       <div className="w-full max-w-7xl mx-0 px-[32px] py-[48px] flex flex-col items-center">
         {/* Judul & Paragraf di posisi tengah */}
         <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
+          <span 
+            id="dokumentasi-badge"
+            style={{ fontFamily: 'Poppins, sans-serif' }}
+            className="text-[#1CD690] font-bold text-xs leading-relaxed tracking-wider uppercase inline-block mb-[4px]"
+          >
+            DOKUMENTASI
+          </span>
           <h2
             id="dokumentasi-heading"
             className="text-[32px] leading-[40px] font-bold text-[#022859] text-center mb-[8px]"
@@ -94,7 +101,7 @@ export default function Dokumentasi() {
                 key={img.id}
                 id={`dokumentasi-image-card-${img.id}`}
                 onClick={() => setCenterIndex(realIndex)}
-                className={`relative group rounded-[16px] overflow-hidden bg-slate-100 cursor-pointer transition-all duration-500 ease-in-out ${
+                className={`relative group rounded-[16px] overflow-hidden bg-slate-100 cursor-pointer ${
                   isMiddle 
                     ? 'w-full md:w-[50%] h-[280px] sm:h-[340px] md:h-[380px] shrink-0 opacity-100 shadow-sm' 
                     : 'w-full md:w-[25%] h-[180px] sm:h-[220px] md:h-[250px] shrink-0 opacity-60 hover:opacity-100'
@@ -104,7 +111,7 @@ export default function Dokumentasi() {
                   src={img.src}
                   alt={img.title}
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-center group-hover:brightness-75 transition-all duration-300"
+                  className="w-full h-full object-cover object-center group-hover:brightness-75"
                 />
                 
                 {/* Hover overlay with Category, Title, Date, and Description positioned at the TOP */}
@@ -153,7 +160,7 @@ export default function Dokumentasi() {
             type="button"
             onClick={handlePrev}
             aria-label="Gambar Sebelumnya"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-[8px] bg-white border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] flex items-center justify-center transition-all duration-200 ease-in-out cursor-pointer shadow-sm active:scale-95"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-[12px] bg-white border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] flex items-center justify-center transition-all duration-200 ease-in-out cursor-pointer shadow-sm active:scale-95"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -163,7 +170,7 @@ export default function Dokumentasi() {
             type="button"
             onClick={handleNext}
             aria-label="Gambar Selanjutnya"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-[8px] bg-white border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] flex items-center justify-center transition-all duration-200 ease-in-out cursor-pointer shadow-sm active:scale-95"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-[12px] bg-white border border-[#022859] text-[#022859] hover:bg-[#022859] hover:text-[#ffffff] hover:border-[#022859] hover:-translate-y-[2px] hover:shadow-[0px_4px_12px_rgba(2,40,89,0.15)] flex items-center justify-center transition-all duration-200 ease-in-out cursor-pointer shadow-sm active:scale-95"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
