@@ -2,28 +2,28 @@ import React from 'react';
 
 export default function MainSection() {
   return (
-    <section id="mainSection" className="w-full min-h-screen bg-white flex items-center justify-center py-16 px-[32px]">
-      <div className="w-full max-w-7xl mx-0 px-[32px] flex flex-col md:flex-row gap-8 lg:gap-12 items-center justify-between">
+    <section id="mainSection" className="w-full h-auto bg-white flex items-center justify-center py-0 px-[48px]">
+      <div className="w-full max-w-7xl mx-0 px-[32px] py-[32px] flex flex-col md:flex-row gap-8 lg:gap-12 items-center justify-between">
         {/* Bagian Kiri: Teks & Informasi (35%) */}
         <div
           id="informasi-left-text-wrapper"
-          className="w-full md:w-[35%] flex flex-col justify-center space-y-4 text-left"
+          className="w-full md:w-[35%] flex flex-col justify-center text-left"
         >
           <h2
-            className="text-[32px] leading-[40px] font-bold text-[#022859]"
+            className="text-[32px] leading-[40px] font-bold text-[#022859] mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Kunjungi & Hubungi Kami
           </h2>
           <p
             id="informasi-subheading-text"
-            className="text-[16px] leading-[24px] text-[#022859]"
+            className="text-[16px] leading-[24px] text-[#022859] mb-[12px]"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
             Hubungi Kontak Kami Untuk Informasi Lebih lanjut
           </p>
           <p
-            className="text-[16px] leading-[24px] font-semibold text-[#022859]"
+            className="text-[16px] leading-[24px] font-semibold text-[#022859] mb-[12px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Informasi:

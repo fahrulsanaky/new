@@ -2,20 +2,13 @@ import React from 'react';
 import { Route } from 'lucide-react';
 
 export default function SejarahSection() {
-  const bentoImages = [
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80",
-  ];
-
   return (
-    <section id="sejarahSection" className="w-full h-auto bg-[#1cd690] flex items-center justify-center py-[42px] px-[32px]">
-      <div className="w-full max-w-7xl mx-auto flex flex-col gap-6 lg:gap-8">
+    <section id="sejarahSection" className="w-full h-auto bg-white flex items-center justify-center py-[32px] px-[48px]">
+      <div className="w-full max-w-[1196px] mx-auto flex flex-col items-center justify-center gap-6 lg:gap-8">
         {/* Main Blue Banner Container */}
         <div
           id="tentang-kami-sejarah-card"
-          className="w-full bg-[#022859] rounded-[16px] px-[32px] py-[42px] text-white flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12 shadow-md"
+          className="w-full max-w-[1196px] min-h-[360px] lg:min-h-[380px] mx-auto bg-[#022859] rounded-[16px] px-[40px] py-[52px] text-white flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12 shadow-md"
         >
           {/* Left Column: Sejarah Badge (Top) & Heading */}
           <div
@@ -29,10 +22,10 @@ export default function SejarahSection() {
                 id="tentang-kami-sejarah-badge-text"
                 style={{
                   fontFamily: 'Poppins, sans-serif',
-                  fontSize: '14px',
-                  lineHeight: '20px',
+                  fontSize: '12px',
+                  lineHeight: '19.5px',
                 }}
-                className="text-[#1CD690] font-bold text-[14px] leading-[20px] tracking-wider uppercase"
+                className="text-[#1CD690] font-bold text-[12px] leading-[19.5px] tracking-wider uppercase"
               >
                 SEJARAH
               </span>
@@ -53,7 +46,8 @@ export default function SejarahSection() {
           {/* Right Column: Paragraph Content with Scrollable Area */}
           <div
             id="tentang-kami-sejarah-right"
-            className="w-full lg:w-[60%] max-h-[220px] sm:max-h-[240px] overflow-y-auto pr-3.5 flex flex-col gap-4 scrollbar-thin scrollbar-thumb-[#1CD690]/60 scrollbar-track-white/10 hover:scrollbar-thumb-[#1CD690] [scrollbar-width:thin] [scrollbar-color:#1CD690_rgba(255,255,255,0.1)]"
+            style={{ fontFamily: 'Nunito, sans-serif' }}
+            className="w-full lg:w-[60%] max-h-[300px] sm:max-h-[320px] overflow-y-auto pr-3.5 flex flex-col gap-4 scrollbar-thin scrollbar-thumb-[#1CD690]/60 scrollbar-track-white/10 hover:scrollbar-thumb-[#1CD690] [scrollbar-width:thin] [scrollbar-color:#1CD690_rgba(255,255,255,0.1)]"
           >
             <p
               id="tentang-kami-sejarah-description-1"
@@ -76,56 +70,6 @@ export default function SejarahSection() {
             >
               Selain itu, Pusat Pengembangan Profesi Indonesia (P3I) juga menyediakan layanan konsultasi dan pendampingan kelembagaan yang bertujuan untuk mendukung proses peningkatan kinerja organisasi melalui pendekatan yang terukur, partisipatif, dan berbasis hasil (result-based approach). Sasaran utama dari program-program yang dijalankan oleh P3I mencakup instansi pemerintah daerah (PEMDA), Badan Usaha Milik Negara (BUMN), Badan Usaha Milik Daerah (BUMD), Badan Layanan Umum (BLU), Badan Layanan Umum Daerah (BLUD), perusahaan swasta, rumah sakit, lembaga pendidikan seperti perguruan tinggi dan sekolah, serta organisasi kemasyarakatan termasuk yayasan dan koperasi. Dengan berbekal tim ahli yang berpengalaman, jaringan kerja lintas sektor, serta komitmen terhadap prinsip profesionalisme dan integritas, P3I menempatkan dirinya sebagai mitra strategis dalam upaya mendorong pembangunan SDM yang unggul, adaptif, dan berdaya saing di era transformasi digital dan tata kelola modern.
             </p>
-          </div>
-        </div>
-
-        {/* Bento Grid Gallery Image Layout di bawah Card Sejarah */}
-        <div
-          id="tentang-kami-sejarah-image-container"
-          className="w-full grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-5"
-        >
-          {/* Baris 1: Kiri Lebar (8/12) */}
-          <div className="md:col-span-8 h-[160px] sm:h-[190px] lg:h-[210px] rounded-[16px] overflow-hidden shadow-sm bg-slate-100 group">
-            <img
-              id="tentang-kami-sejarah-image-1"
-              src={bentoImages[0]}
-              alt="Dokumentasi Pelatihan 1"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-
-          {/* Baris 1: Kanan Sempit (4/12) */}
-          <div className="md:col-span-4 h-[160px] sm:h-[190px] lg:h-[210px] rounded-[16px] overflow-hidden shadow-sm bg-slate-100 group">
-            <img
-              id="tentang-kami-sejarah-image-2"
-              src={bentoImages[1]}
-              alt="Dokumentasi Pelatihan 2"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-
-          {/* Baris 2: Kiri Sempit (4/12) */}
-          <div className="md:col-span-4 h-[160px] sm:h-[190px] lg:h-[210px] rounded-[16px] overflow-hidden shadow-sm bg-slate-100 group">
-            <img
-              id="tentang-kami-sejarah-image-3"
-              src={bentoImages[2]}
-              alt="Dokumentasi Pelatihan 3"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-
-          {/* Baris 2: Kanan Lebar (8/12) */}
-          <div className="md:col-span-8 h-[160px] sm:h-[190px] lg:h-[210px] rounded-[16px] overflow-hidden shadow-sm bg-slate-100 group">
-            <img
-              id="tentang-kami-sejarah-image-4"
-              src={bentoImages[3]}
-              alt="Dokumentasi Pelatihan 4"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
           </div>
         </div>
       </div>

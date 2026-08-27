@@ -28,7 +28,7 @@ export default function VisiMisi() {
             {/* Paragraf Utama */}
             <p
               id="pencapaian-left-statement"
-              style={{ fontFamily: 'Poppins, sans-serif' }}
+              style={{ fontFamily: 'Nunito, sans-serif' }}
               className="text-[20px] italic font-normal text-slate-800 leading-[28px] no-underline tracking-tight mb-6 border-[#022859]"
             >
               Mewujudkan pusat pemikiran dan pengembangan manusia Indonesia yang tangguh, bernalar kritis, dan berdaya cipta tinggi dalam menghadapi perubahan zaman.

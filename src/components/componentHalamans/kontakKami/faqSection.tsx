@@ -36,14 +36,14 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faqSection" className="w-full h-auto bg-white py-16 px-[32px] flex items-center justify-center">
-      <div className="w-full max-w-7xl mx-0 px-[32px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+    <section id="faqSection" className="w-full h-auto bg-white py-0 px-[48px] flex items-center justify-center">
+      <div className="w-full max-w-7xl mx-0 px-[32px] py-[32px] grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         {/* Kolom Kiri: Informasi & Teks */}
         <div id="faq-left-content" className="lg:col-span-5 flex flex-col items-start space-y-5 text-left">
           {/* Heading */}
           <h2
             id="faq-main-heading"
-            className="text-[32px] leading-[40px] font-bold text-[#022859]"
+            className="text-[32px] leading-[40px] font-bold text-[#022859] mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Common Questions?

@@ -15,14 +15,17 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-slate-900/40" />
 
       {/* Konten Hero Section */}
-      <div className="relative z-10 w-full px-6 sm:px-8 py-20 text-left flex flex-col items-start gap-8">
+      <div className="relative z-10 w-full px-6 sm:px-8 py-[32px] text-left flex flex-col items-start gap-6">
         <h1 
           style={{ fontFamily: 'Poppins, sans-serif' }}
-          className="text-[42px] font-bold text-white tracking-tight leading-tight max-w-3xl px-6 py-0"
+          className="text-[42px] font-bold text-white tracking-tight leading-tight max-w-3xl px-0 py-0"
         >
           Jadwal Agenda Pelatihan & Sertifikasi
         </h1>
-        <p className="mt-0 text-sm md:text-base text-slate-200 leading-relaxed max-w-2xl px-6">
+        <p 
+          style={{ fontFamily: 'Nunito, sans-serif' }}
+          className="mt-0 pt-0 text-sm md:text-base text-slate-200 leading-[24px] max-w-2xl px-0"
+        >
           Temukan dan rencanakan jadwal keikutsertaan program pelatihan terdekat untuk memperkuat kompetensi profesional dan organisasi Anda.
         </p>
       </div>

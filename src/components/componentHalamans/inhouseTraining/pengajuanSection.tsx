@@ -13,12 +13,16 @@ function CustomStepIcon(props: StepIconProps) {
 
   return (
     <div
-      className={`w-7 h-7 flex items-center justify-center rounded-[8px] text-[13px] font-bold transition-all duration-200 ${
+      className={`w-7 h-7 flex items-center justify-center rounded-[8px] text-[12px] leading-[18px] font-bold transition-all duration-200 ${
         completed || active
           ? 'bg-[#1CD690] text-[#022859] shadow-sm'
           : 'bg-white/20 text-white/90 border border-white/20'
       }`}
-      style={{ fontFamily: 'Poppins, sans-serif' }}
+      style={{
+        fontFamily: 'Poppins, sans-serif',
+        fontSize: '12px',
+        lineHeight: '18px',
+      }}
     >
       {completed ? <Check className="w-4 h-4 stroke-[3]" /> : icon}
     </div>
@@ -84,28 +88,32 @@ export default function PengajuanSection() {
   return (
     <section id="pengajuanSection" className="w-full h-auto bg-white">
       <div className="w-full h-auto flex flex-col lg:flex-row">
-        {/* BAGIAN KIRI (Left Panel: 35% Lebar, Padding 32px & 42px) */}
+        {/* BAGIAN KIRI (Left Panel: 35% Lebar, Padding 32px) */}
         <div
           id="inhouse-prosedur-left-panel"
-          className="w-full lg:w-[35%] h-auto bg-[#022859] px-[32px] py-[42px] flex flex-col justify-start text-left shrink-0 gap-[14px]"
+          className="w-full lg:w-[35%] h-auto bg-[#022859] px-[32px] py-[32px] flex flex-col justify-start text-left shrink-0"
         >
           <span
             id="inhouse-prosedur-badge"
-            className="text-[#1CD690] font-bold text-[13px] leading-[18px] tracking-wider uppercase mb-0 inline-block"
-            style={{ fontFamily: 'Poppins, sans-serif' }}
+            className="text-[#1CD690] font-bold text-[12px] leading-[19.5px] tracking-wider uppercase mb-[4px] inline-block"
+            style={{
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '12px',
+              lineHeight: '19.5px',
+            }}
           >
             PROSEDUR DAN FORM
           </span>
           <h2
             id="inhouse-prosedur-title"
-            className="text-[26px] sm:text-[32px] font-bold text-white leading-[34px] sm:leading-[40px] tracking-tight"
+            className="text-[26px] sm:text-[32px] font-bold text-white leading-[34px] sm:leading-[40px] tracking-tight mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Alur Kerja Sama In-House Training
           </h2>
           <p
             id="inhouse-prosedur-subtitle"
-            className="text-slate-300 text-[16px] leading-[24px] mt-0 mb-0"
+            className="text-slate-300 text-[16px] leading-[24px] mt-0 mb-[12px]"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
             Tahapan terstruktur untuk menyelenggarakan pelatihan yang efektif, terarah, dan memberikan hasil optimal bagi peningkatan kompetensi SDM di instansi Anda.
@@ -129,7 +137,8 @@ export default function PengajuanSection() {
               '& .MuiStepLabel-label': {
                 color: '#ffffff !important',
                 fontWeight: 600,
-                fontSize: '15px',
+                fontSize: '14px',
+                lineHeight: '18px',
                 fontFamily: 'Poppins, sans-serif',
                 cursor: 'pointer',
               },
@@ -180,8 +189,8 @@ export default function PengajuanSection() {
                     <Typography
                       sx={{
                         color: '#cbd5e1',
-                        fontSize: '14px',
-                        lineHeight: '20px',
+                        fontSize: '12px',
+                        lineHeight: '18px',
                         fontFamily: 'Nunito, sans-serif',
                         mb: 1.5,
                       }}
@@ -195,16 +204,20 @@ export default function PengajuanSection() {
           </Box>
         </div>
 
-        {/* BAGIAN KANAN (Right Panel: 65% Lebar, Padding 32px & 42px) */}
+        {/* BAGIAN KANAN (Right Panel: 65% Lebar, Padding 32px) */}
         <div
           id="inhouse-prosedur-right-panel"
-          className="w-full lg:w-[65%] h-auto bg-[#ebfbfa] px-[32px] py-[42px] flex flex-col items-start justify-start text-left gap-[14px]"
+          className="w-full lg:w-[65%] h-auto bg-[#ebfbfa] px-[32px] py-[32px] flex flex-col items-start justify-start text-left"
         >
           {/* Badge / Tag Form Permohonan */}
           <span
             id="inhouse-prosedur-form-badge"
-            className="text-[#059669] font-bold text-[13px] leading-[18px] tracking-wider uppercase mb-0 inline-block"
-            style={{ fontFamily: 'Poppins, sans-serif' }}
+            className="text-[#059669] font-bold text-[12px] leading-[19.5px] tracking-wider uppercase mb-[4px] inline-block"
+            style={{
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '12px',
+              lineHeight: '19.5px',
+            }}
           >
             FORM PERMOHONAN
           </span>
@@ -212,7 +225,7 @@ export default function PengajuanSection() {
           {/* Judul */}
           <h2
             id="inhouse-prosedur-form-title"
-            className="text-[26px] sm:text-[32px] font-bold text-[#022859] leading-[34px] sm:leading-[40px] tracking-tight mb-0"
+            className="text-[26px] sm:text-[32px] font-bold text-[#022859] leading-[34px] sm:leading-[40px] tracking-tight mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Pengajuan In-House Training
@@ -221,7 +234,7 @@ export default function PengajuanSection() {
           {/* Paragraf */}
           <p
             id="inhouse-prosedur-form-description"
-            className="text-slate-600 text-[15px] sm:text-[16px] leading-[24px] max-w-xl mb-0"
+            className="text-slate-600 text-[15px] sm:text-[16px] leading-[24px] max-w-xl mb-[12px]"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
             Lengkapi data di bawah ini untuk mengajukan program pelatihan khusus sesuai kebutuhan spesifik instansi atau perusahaan Anda. Tim kami akan segera meninjau dan menghubungi Anda kembali.

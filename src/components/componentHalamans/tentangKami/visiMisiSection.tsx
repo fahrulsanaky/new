@@ -3,14 +3,14 @@ import { Telescope, Rocket } from 'lucide-react';
 
 export default function VisiMisiSection() {
   return (
-    <section id="visimisiSection" className="w-full h-auto bg-white py-[32px] px-[32px]">
+    <section id="visimisiSection" className="w-full h-auto bg-white py-0 px-[48px]">
       <div className="w-full max-w-7xl mx-auto">
         <div
           id="tentang-kami-visimisi-container"
           className="w-full flex flex-col gap-6 lg:gap-8 px-[32px]"
         >
           {/* Cards Visi & Misi (2 Kolom) */}
-          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch py-[32px]">
             {/* Card Kiri (Visi) */}
             <div
               id="tentang-kami-visimisi-card-kiri"
@@ -23,7 +23,7 @@ export default function VisiMisiSection() {
                 </span>
                 <span
                   id="tentang-kami-visi-label-badge"
-                  className="text-[#022859] font-bold text-[16px] leading-[22px] tracking-wider uppercase inline-block"
+                  className="text-[#022859] font-bold text-[18px] leading-[27px] tracking-wider uppercase inline-block"
                   style={{ fontFamily: 'Poppins, sans-serif' }}
                 >
                   VISI
@@ -33,7 +33,7 @@ export default function VisiMisiSection() {
               {/* Paragraf Utama Visi */}
               <p
                 id="tentang-kami-visi-statement"
-                style={{ fontFamily: 'Poppins, sans-serif' }}
+                style={{ fontFamily: 'Nunito, sans-serif' }}
                 className="text-[16px] italic font-normal text-[#022859] leading-[24px] tracking-tight"
               >
                 Mewujudkan pusat pemikiran dan pengembangan manusia Indonesia yang tangguh, bernalar kritis, dan berdaya cipta tinggi dalam menghadapi perubahan zaman.
@@ -49,7 +49,7 @@ export default function VisiMisiSection() {
               <div className="flex items-center justify-end gap-2.5 mb-[8px] w-full">
                 <span
                   id="tentang-kami-misi-badge"
-                  className="text-[#1CD690] font-bold text-[16px] leading-[22px] tracking-wider uppercase"
+                  className="text-[#1CD690] font-bold text-[18px] leading-[27px] tracking-wider uppercase"
                   style={{ fontFamily: 'Poppins, sans-serif' }}
                 >
                   MISI

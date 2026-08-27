@@ -22,7 +22,10 @@ export default function HeroSection() {
         >
           Tingkatkan Kompetensi dan Keahlian Profesional Anda
         </h1>
-        <p className="mt-0 pt-0 text-sm md:text-base text-slate-200 leading-[24px] max-w-2xl px-0">
+        <p 
+          style={{ fontFamily: 'Nunito, sans-serif' }}
+          className="mt-0 pt-0 text-sm md:text-base text-slate-200 leading-[24px] max-w-2xl px-0"
+        >
           Kami menyediakan program pelatihan terbaik dan bersertifikasi untuk mendukung percepatan karier serta peningkatan produktivitas organisasi Anda.
         </p>
       </div>

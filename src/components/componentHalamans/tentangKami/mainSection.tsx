@@ -3,14 +3,14 @@ import { Info } from 'lucide-react';
 
 export default function MainSection() {
   return (
-    <section id="mainSection" className="w-full h-auto bg-white flex items-center justify-center pt-[64px] pb-[32px] px-[32px]">
-      <div className="w-full max-w-7xl mx-0 px-[32px] flex flex-col gap-10 lg:gap-12">
-        {/* Row Atas: 2 Kolom (Visi Kiri & Tentang Kami Kanan) */}
+    <section id="mainSection" className="w-full h-auto bg-white flex items-center justify-center py-0 px-[48px]">
+      <div className="w-full max-w-7xl mx-0 px-[32px] py-[32px] flex flex-col gap-10 lg:gap-12">
+        {/* Row Atas: 2 Kolom (Visi Kiri 35% & Tentang Kami Kanan 50%) */}
         <div className="w-full flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-12">
-          {/* Kolom Kiri: Visi */}
+          {/* Kolom Kiri: Visi (35%) */}
           <div
             id="tentang-kami-left-container"
-            className="w-full lg:w-[55%] flex flex-col justify-start"
+            className="w-full lg:w-[35%] flex flex-col justify-start"
           >
             {/* Visi Badge / Title */}
             <div className="mb-[4px] flex items-center justify-start gap-2.5">
@@ -23,11 +23,11 @@ export default function MainSection() {
               </span>
               <span
                 id="tentang-kami-visi-label-badge"
-                className="text-[#1cd690] font-bold text-[14px] leading-[20px] tracking-wider uppercase inline-block"
+                className="text-[#1cd690] font-bold text-[12px] leading-[19.5px] tracking-wider uppercase inline-block"
                 style={{
                   fontFamily: 'Poppins, sans-serif',
-                  fontSize: '14px',
-                  lineHeight: '20px',
+                  fontSize: '12px',
+                  lineHeight: '19.5px',
                   color: '#1cd690',
                 }}
               >
@@ -45,17 +45,17 @@ export default function MainSection() {
             </h2>
 
             {/* Paragraf Utama */}
-            <div className="flex flex-col gap-4 mb-6">
+            <div style={{ fontFamily: 'Nunito, sans-serif' }} className="flex flex-col gap-4 mb-6">
               <p
                 id="tentang-kami-left-statement"
-                style={{ fontFamily: 'Poppins, sans-serif' }}
+                style={{ fontFamily: 'Nunito, sans-serif' }}
                 className="text-[16px] not-italic font-normal text-slate-800 leading-[24px] no-underline tracking-tight border-[#022859]"
               >
                 Pusat Pengembangan Profesi Indonesia (P3I) merupakan lembaga penyedia layanan pelatihan yang berfokus pada pengembangan kompetensi sumber daya manusia. Kami menghadirkan berbagai program pelatihan yang dirancang untuk membantu peserta meningkatkan pengetahuan, keterampilan, dan kepercayaan diri dalam menghadapi perkembangan dunia kerja yang terus berubah.
               </p>
               <p
                 id="tentang-kami-left-statement-2"
-                style={{ fontFamily: 'Poppins, sans-serif' }}
+                style={{ fontFamily: 'Nunito, sans-serif' }}
                 className="text-[16px] not-italic font-normal text-slate-800 leading-[24px] no-underline tracking-tight border-[#022859]"
               >
                 Melalui layanan Pelatihan Reguler untuk masyarakat umum dan In-House Training untuk perusahaan maupun instansi, P3I berkomitmen menghadirkan pengalaman belajar yang interaktif, aplikatif, dan memberikan manfaat nyata bagi setiap peserta.
@@ -83,10 +83,10 @@ export default function MainSection() {
             </div>
           </div>
 
-          {/* Kolom Kanan: Gambar Tentang Kami dengan Lebar 45% dan Radius 16px */}
+          {/* Kolom Kanan: Gambar Tentang Kami dengan Lebar 50% dan Radius 16px */}
           <div
             id="tentang-kami-right-image-wrapper"
-            className="w-full lg:w-[45%] rounded-[16px] overflow-hidden shadow-sm h-[320px] sm:h-[380px] lg:h-auto min-h-[300px] flex items-center justify-center bg-slate-100"
+            className="w-full lg:w-[50%] rounded-[16px] overflow-hidden shadow-sm h-[320px] sm:h-[380px] lg:h-auto min-h-[300px] flex items-center justify-center bg-slate-100"
           >
             <img
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&auto=format&fit=crop&q=80"
