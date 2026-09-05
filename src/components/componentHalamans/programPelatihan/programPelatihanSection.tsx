@@ -147,9 +147,9 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
   return (
     <section
       id="pelatihan-section"
-      className="w-full min-h-screen bg-[#F5F5F5] box-border border-0 relative flex flex-col justify-start py-[48px] pl-[24px] pr-[24px]"
+      className="w-full min-h-screen bg-white box-border border-0 relative flex flex-col justify-start py-[48px] pl-[24px] pr-[24px]"
       style={{
-        backgroundColor: '#F5F5F5',
+        backgroundColor: '#ffffff',
         minHeight: '100vh',
         paddingTop: '48px',
         paddingBottom: '48px',
@@ -161,26 +161,36 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
         {/* Header Area: Judul */}
         <div 
           id="pelatihan-header-wrapper" 
-          className="w-full flex flex-col md:flex-row md:items-center justify-between gap-6 py-2"
+          className="w-full flex flex-col md:flex-row md:items-center justify-between gap-6 py-2 mb-8"
           style={{
             paddingTop: '8px',
             paddingBottom: '8px',
+            marginBottom: '32px',
           }}
         >
-          {/* 1 Judul: Program Pelatihan */}
-          <h2
-            id="pelatihan-main-title"
-            className="text-[32px] leading-[40px] font-bold text-[#022859] tracking-tight"
-            style={{
-              fontFamily: 'Poppins, sans-serif',
-              fontSize: '32px',
-              lineHeight: '40px',
-              fontWeight: 'bold',
-              color: '#022859',
-            }}
-          >
-            Program Pelatihan
-          </h2>
+          {/* 1 Judul: Program Pelatihan & Subjudul */}
+          <div className="flex flex-col gap-1">
+            <h2
+              id="pelatihan-main-title"
+              className="text-[32px] leading-[40px] font-bold text-[#022859] tracking-tight"
+              style={{
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '32px',
+                lineHeight: '40px',
+                fontWeight: 'bold',
+                color: '#022859',
+              }}
+            >
+              Program Pelatihan
+            </h2>
+            <p
+              id="pelatihan-main-subtitle"
+              className="text-[15px] sm:text-[16px] leading-[24px] text-slate-600 font-normal max-w-3xl"
+              style={{ fontFamily: 'Nunito, sans-serif' }}
+            >
+              Temukan program yang tepat untuk mendukung pengembangan diri Anda atau peningkatan kinerja tim di perusahaan Anda.
+            </p>
+          </div>
         </div>
 
         {/* Konten Area Pelatihan: Dibagi 2 Bagian Kiri & Kanan */}
@@ -402,8 +412,8 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
             </div>
             {filteredCards.length > 0 ? (
               <div className="flex flex-col gap-8">
-                {/* Grid Kartu Pelatihan */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+                {/* Grid Kartu Pelatihan (3 Kolom) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 items-stretch">
                   {paginatedCards.map((card) => {
                     const cardTitle = card.judulPelatihan || card.title;
                     const cardImage = card.gambarPelatihan || card.image;
@@ -462,32 +472,24 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                                 <span className="font-semibold text-slate-800 truncate">{card.lokasi}</span>
                               </div>
 
-                              {/* Pilihan Kelas */}
-                              <div className="flex flex-col gap-1">
-                                <span className="text-slate-500 font-normal">Pilihan Kelas :</span>
-                                <div className="flex flex-col gap-1 pl-1">
-                                  <div className="flex items-center gap-1.5 text-slate-800 font-semibold">
-                                    <Building2 size={14} className="text-[#1CD690] shrink-0" />
-                                    <span>Offline</span>
+                              {/* Pilihan Kelas & Harga (Harga disandingkan di sebelah kanan pilihan kelas) */}
+                              <div className="flex flex-col gap-1.5 pt-0.5">
+                                <span className="text-slate-500 font-normal">Pilihan Kelas & Harga :</span>
+                                <div className="flex flex-col gap-1.5 pl-0.5">
+                                  <div className="flex items-center justify-between gap-2 text-slate-800">
+                                    <div className="flex items-center gap-1.5 font-semibold">
+                                      <Building2 size={14} className="text-[#1CD690] shrink-0" />
+                                      <span>Offline</span>
+                                    </div>
+                                    <span className="font-bold text-[#022859]">{offlinePrice}</span>
                                   </div>
-                                  <div className="flex items-center gap-1.5 text-slate-800 font-semibold">
-                                    <Video size={14} className="text-[#1CD690] shrink-0" />
-                                    <span>Online</span>
-                                  </div>
-                                </div>
-                              </div>
 
-                              {/* Harga */}
-                              <div className="flex flex-col gap-1">
-                                <span className="text-slate-500 font-normal">Harga :</span>
-                                <div className="flex flex-col gap-1 pl-1">
-                                  <div className="flex items-center gap-1.5 text-[#022859] font-bold">
-                                    <Building2 size={14} className="text-[#1CD690] shrink-0" />
-                                    <span>{offlinePrice}</span>
-                                  </div>
-                                  <div className="flex items-center gap-1.5 text-[#022859] font-bold">
-                                    <Video size={14} className="text-[#1CD690] shrink-0" />
-                                    <span>{onlinePrice}</span>
+                                  <div className="flex items-center justify-between gap-2 text-slate-800">
+                                    <div className="flex items-center gap-1.5 font-semibold">
+                                      <Video size={14} className="text-[#1CD690] shrink-0" />
+                                      <span>Online</span>
+                                    </div>
+                                    <span className="font-bold text-[#022859]">{onlinePrice}</span>
                                   </div>
                                 </div>
                               </div>
@@ -515,11 +517,11 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                 {/* Komponen Pagination Desain Presisi sesuai Permintaan dan Gambar */}
                 <div
                   id="pelatihan-pagination-wrapper"
-                  className="w-full bg-[#f5f5f5] flex items-center justify-between p-3 select-none"
+                  className="w-full bg-white border-0 rounded-[12px] flex items-center justify-between p-3 select-none"
                   style={{
-                    borderWidth: '0px',
                     borderRadius: '12px',
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: '#ffffff',
+                    borderWidth: '0px',
                   }}
                 >
                   {/* Tombol Previous */}
@@ -530,13 +532,13 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                     disabled={currentPage === 1}
                     className={`group w-10 h-10 flex items-center justify-center rounded-[12px] transition-all duration-200 ${
                       currentPage === 1
-                        ? 'cursor-not-allowed border border-[#e2e8f0] bg-[#f5f5f5] text-[#cbd5e1]'
-                        : 'cursor-pointer border border-[#022859] bg-[#f5f5f5] text-[#022859] hover:!bg-[#022859] hover:!border-[#022859]'
+                        ? 'cursor-not-allowed border border-[#e2e8f0] bg-white text-[#cbd5e1]'
+                        : 'cursor-pointer border border-[#022859] bg-white text-[#022859] hover:!bg-[#022859] hover:!border-[#022859]'
                     }`}
                     style={{
                       fontFamily: 'Nunito, sans-serif',
                       borderRadius: '12px',
-                      backgroundColor: '#f5f5f5',
+                      backgroundColor: '#ffffff',
                     }}
                   >
                     <ArrowLeft
@@ -597,13 +599,13 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                     disabled={currentPage === totalPages}
                     className={`group w-10 h-10 flex items-center justify-center rounded-[12px] transition-all duration-200 ${
                       currentPage === totalPages
-                        ? 'cursor-not-allowed border border-[#e2e8f0] bg-[#f5f5f5] text-[#cbd5e1]'
-                        : 'cursor-pointer border border-[#022859] bg-[#f5f5f5] text-[#022859] hover:!bg-[#022859] hover:!border-[#022859]'
+                        ? 'cursor-not-allowed border border-[#e2e8f0] bg-white text-[#cbd5e1]'
+                        : 'cursor-pointer border border-[#022859] bg-white text-[#022859] hover:!bg-[#022859] hover:!border-[#022859]'
                     }`}
                     style={{
                       fontFamily: 'Nunito, sans-serif',
                       borderRadius: '12px',
-                      backgroundColor: '#f5f5f5',
+                      backgroundColor: '#ffffff',
                     }}
                   >
                     <ArrowRight

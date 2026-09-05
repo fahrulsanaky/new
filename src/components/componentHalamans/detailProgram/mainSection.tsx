@@ -206,13 +206,13 @@ export default function MainSection() {
               Tujuan & Manfaat Pelatihan
             </h2>
 
-            {/* List Item Kartu Sesuai Desain Gambar */}
-            <div className="w-full flex flex-col gap-3.5 mt-1">
+            {/* List Item Bersatu Sesuai Permintaan */}
+            <div className="w-full bg-white border border-slate-200/80 rounded-[16px] p-5 sm:p-6 flex flex-col gap-4 shadow-sm">
               {listTujuan.map((tujuanText, idx) => (
                 <div 
                   key={idx}
                   id={`tujuan-item-${idx + 1}`}
-                  className="w-full bg-white border border-slate-200/80 rounded-[16px] p-4 sm:p-5 flex items-start gap-3.5 shadow-sm hover:border-[#1cd690]/50 hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                  className="w-full flex items-start gap-3.5"
                 >
                   <CheckCircle2 size={20} className="text-[#1cd690] stroke-[2.2] shrink-0 mt-0.5" />
                   <p 

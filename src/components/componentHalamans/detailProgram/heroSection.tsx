@@ -21,7 +21,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/85 to-slate-900/60" />
 
       {/* Konten Hero Section */}
-      <div id="hero-detail-program-content" className="relative z-10 w-full max-w-7xl m-0 p-0 text-left flex flex-col items-start gap-4">
+      <div id="hero-detail-program-content" className="relative z-10 w-full max-w-7xl m-0 px-8 py-12 text-left flex flex-col items-start gap-4">
         {program && (
           <span 
             className="text-[#1CD690] text-[13px] sm:text-[14px] font-bold uppercase tracking-wider"
