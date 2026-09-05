@@ -13,7 +13,6 @@ export default function ProgramPelatihan() {
         <Header />
         <HeroSection />
         <ProgramPelatihanSection />
-        <CtaInhouse />
         <CtaSection />
         <Footer />
       </main>

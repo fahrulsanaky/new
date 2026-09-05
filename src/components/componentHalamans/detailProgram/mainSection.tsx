@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { 
   Target, 
@@ -24,7 +24,17 @@ import {
   Wallet,
   LibraryBig,
   Building2,
-  Video
+  Video,
+  X,
+  Phone,
+  User,
+  Mail,
+  Building,
+  Briefcase,
+  Map,
+  Users2,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { getPelatihanById } from '../../../data/dataPelatihan';
 
@@ -40,6 +50,50 @@ export default function MainSection() {
   const [fasilitasTab, setFasilitasTab] = useState<'offline' | 'online'>('offline');
   const [isBiayaOpen, setIsBiayaOpen] = useState(false);
   const [isMetodeOpen, setIsMetodeOpen] = useState(false);
+
+  // Modal Pendaftaran State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedMetode, setSelectedMetode] = useState<'Offline' | 'Online'>('Offline');
+  const [selectedJadwalIndex, setSelectedJadwalIndex] = useState<number>(0);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    nama: '',
+    email: '',
+    noWhatsapp: '',
+    umur: '',
+    jenisKelamin: 'Laki-laki',
+    pekerjaan: '',
+    alamat: '',
+  });
+
+  // Helper untuk normalisasi data jadwal pelatihan menjadi array
+  const jadwalList = useMemo(() => {
+    if (!program.jadwalPelatihan) return [];
+    if (Array.isArray(program.jadwalPelatihan)) return program.jadwalPelatihan;
+    if (typeof program.jadwalPelatihan === 'object') return [program.jadwalPelatihan];
+    return [{ tanggal: program.jadwalPelatihan, bulan: 'Jadwal Utama', durasi: '' }];
+  }, [program.jadwalPelatihan]);
+
+  // Kelompokkan jadwal berdasarkan bulan (misal "Oktober 2026", "November 2026", dsb.)
+  const bulanList = useMemo(() => {
+    const list: string[] = [];
+    jadwalList.forEach((j) => {
+      const b = j.bulan?.trim() || 'Jadwal Umum';
+      if (!list.includes(b)) {
+        list.push(b);
+      }
+    });
+    return list;
+  }, [jadwalList]);
+
+  const [selectedBulanIndex, setSelectedBulanIndex] = useState<number>(0);
+
+  // Dapatkan item jadwal yang berada pada bulan yang sedang dipilih pada pagination tab
+  const activeBulan = bulanList[selectedBulanIndex] || bulanList[0] || '';
+  const filteredJadwalByBulan = useMemo(() => {
+    if (!activeBulan) return jadwalList;
+    return jadwalList.filter((j) => (j.bulan?.trim() || 'Jadwal Umum') === activeBulan);
+  }, [jadwalList, activeBulan]);
 
   // Helper untuk mendapatkan list materi per hari
   const materiHari1 = program.materiPelatihan?.hari1 || [];
@@ -733,7 +787,10 @@ export default function MainSection() {
               <button
                 id="btn-daftar-program-utama"
                 type="button"
-                onClick={() => navigate('/kontak-kami')}
+                onClick={() => {
+                  setFormSubmitted(false);
+                  setIsModalOpen(true);
+                }}
                 className="w-full py-3.5 px-5 bg-[#022859] hover:bg-[#1cd690] hover:text-[#022859] text-white hover:-translate-y-[2px] hover:shadow-[0px_6px_20px_rgba(28,214,144,0.35)] font-bold text-[15px] sm:text-[16px] rounded-[14px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95 flex items-center justify-center gap-2.5 shadow-md"
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
@@ -756,6 +813,361 @@ export default function MainSection() {
         </div>
 
       </div>
+
+      {/* ========================================================================= */}
+      {/* MODAL INFORMASI & FORM PENDAFTARAN                                         */}
+      {/* ========================================================================= */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div 
+            className="bg-white w-full max-w-2xl rounded-[24px] shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh] relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Body Modal */}
+            <div className="p-6 sm:p-8 overflow-y-auto flex flex-col gap-6" style={{ fontFamily: 'Nunito, sans-serif' }}>
+              {formSubmitted ? (
+                /* Tampilan Setelah Berhasil Mengirim */
+                <div className="flex flex-col items-center justify-center text-center py-8 gap-4">
+                  <div className="w-16 h-16 bg-[#1cd690]/10 text-[#1cd690] rounded-full flex items-center justify-center">
+                    <CheckCircle2 size={40} />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#022859]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                    Pendaftaran Berhasil Dikirim!
+                  </h3>
+                  <p className="text-slate-600 text-sm max-w-md leading-relaxed">
+                    Terima kasih, <strong className="text-slate-900">{formData.nama}</strong>. Tim administrasi kami akan segera menghubungi Anda melalui WhatsApp/Email untuk mengonfirmasi kelengkapan berkas dan invoice pendaftaran.
+                  </p>
+
+                  {/* Ringkasan Singkat */}
+                  <div className="w-full bg-slate-50 border border-slate-100 rounded-xl p-4 text-left flex flex-col gap-2 mt-2 text-xs text-slate-600">
+                    <div><strong>Program:</strong> {programTitle}</div>
+                    {jadwalList[selectedJadwalIndex] && (
+                      <div>
+                        <strong>Jadwal Sesi:</strong> {jadwalList[selectedJadwalIndex].tanggal} {jadwalList[selectedJadwalIndex].bulan} ({jadwalList[selectedJadwalIndex].metode || selectedMetode})
+                      </div>
+                    )}
+                    <div><strong>Metode Sesi:</strong> Kelas {selectedMetode}</div>
+                    <div><strong>Email:</strong> {formData.email}</div>
+                    <div><strong>WhatsApp:</strong> {formData.noWhatsapp}</div>
+                    <div><strong>Umur:</strong> {formData.umur} Tahun</div>
+                    <div><strong>Jenis Kelamin:</strong> {formData.jenisKelamin}</div>
+                    <div><strong>Pekerjaan:</strong> {formData.pekerjaan}</div>
+                    <div><strong>Alamat:</strong> {formData.alamat}</div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(false)}
+                    className="mt-4 py-3 px-8 bg-[#022859] hover:bg-[#1cd690] hover:text-[#022859] text-white font-bold text-sm rounded-xl transition-colors cursor-pointer"
+                    style={{ fontFamily: 'Poppins, sans-serif' }}
+                  >
+                    Tutup
+                  </button>
+                </div>
+              ) : (
+                /* Form Isian Pendaftaran */
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    setFormSubmitted(true);
+                  }}
+                  className="flex flex-col gap-5"
+                >
+                  {/* Pilihan Jadwal & Metode Pelatihan */}
+                  <div className="flex flex-col gap-2.5">
+                    <label className="text-xs font-bold uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
+                      <Calendar size={14} className="text-[#1cd690]" />
+                      <span>Pilih Jadwal & Metode Pelatihan <span className="text-red-500">*</span></span>
+                    </label>
+
+                    {/* Pagination Navigasi Bulan */}
+                    {bulanList.length > 0 && (
+                      <div className="flex items-center justify-between bg-white border-0 px-1 py-1">
+                        <button
+                          type="button"
+                          disabled={selectedBulanIndex === 0}
+                          onClick={() => {
+                            const newIndex = selectedBulanIndex - 1;
+                            setSelectedBulanIndex(newIndex);
+                            const prevBulan = bulanList[newIndex];
+                            const firstMatch = jadwalList.findIndex(
+                              (j) => (j.bulan?.trim() || 'Jadwal Umum') === prevBulan
+                            );
+                            if (firstMatch !== -1) {
+                              setSelectedJadwalIndex(firstMatch);
+                              const mText = jadwalList[firstMatch].metode || 'Offline';
+                              setSelectedMetode(mText.toLowerCase().includes('online') ? 'Online' : 'Offline');
+                            }
+                          }}
+                          className="p-1.5 rounded-[12px] border border-slate-200 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 transition-colors cursor-pointer"
+                          title="Bulan Sebelumnya"
+                        >
+                          <ChevronLeft size={16} />
+                        </button>
+
+                        <span className="text-sm font-bold text-[#022859]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                          {activeBulan}
+                        </span>
+
+                        <button
+                          type="button"
+                          disabled={selectedBulanIndex === bulanList.length - 1}
+                          onClick={() => {
+                            const newIndex = selectedBulanIndex + 1;
+                            setSelectedBulanIndex(newIndex);
+                            const nextBulan = bulanList[newIndex];
+                            const firstMatch = jadwalList.findIndex(
+                              (j) => (j.bulan?.trim() || 'Jadwal Umum') === nextBulan
+                            );
+                            if (firstMatch !== -1) {
+                              setSelectedJadwalIndex(firstMatch);
+                              const mText = jadwalList[firstMatch].metode || 'Offline';
+                              setSelectedMetode(mText.toLowerCase().includes('online') ? 'Online' : 'Offline');
+                            }
+                          }}
+                          className="p-1.5 rounded-[12px] border border-slate-200 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 transition-colors cursor-pointer"
+                          title="Bulan Berikutnya"
+                        >
+                          <ChevronRight size={16} />
+                        </button>
+                      </div>
+                    )}
+
+                    {jadwalList.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+                        {filteredJadwalByBulan.map((item, localIdx) => {
+                          // cari index asli di jadwalList
+                          const originalIdx = jadwalList.findIndex((j) => j === item);
+                          const isSelected = selectedJadwalIndex === (originalIdx !== -1 ? originalIdx : localIdx);
+                          const metodeText = item.metode || (localIdx % 2 === 0 ? 'Offline' : 'Online');
+                          const hargaText = metodeText.toLowerCase() === 'online'
+                            ? (typeof program.harga === 'object' ? program.harga.online : 'Rp 2.850.000')
+                            : (typeof program.harga === 'object' ? program.harga.offline : 'Rp 3.500.000');
+
+                          return (
+                            <button
+                              key={localIdx}
+                              type="button"
+                              onClick={() => {
+                                setSelectedJadwalIndex(originalIdx !== -1 ? originalIdx : localIdx);
+                                setSelectedMetode(metodeText.toLowerCase().includes('online') ? 'Online' : 'Offline');
+                              }}
+                              className={`p-3.5 rounded-xl border-2 flex items-start gap-3 transition-all cursor-pointer text-left relative overflow-hidden ${
+                                isSelected
+                                  ? 'border-[#022859] bg-[#f0f6ff] shadow-xs'
+                                  : 'border-slate-200 hover:border-slate-300 bg-white'
+                              }`}
+                            >
+                              <div className={`p-2 rounded-[12px] shrink-0 mt-0.5 ${
+                                isSelected ? 'bg-[#022859] text-white' : 'bg-slate-100 text-slate-500'
+                              }`}>
+                                {metodeText.toLowerCase().includes('online') ? <Video size={18} /> : <Building2 size={18} />}
+                              </div>
+
+                              <div className="flex flex-col gap-0.5">
+                                <div className="flex items-center gap-1.5">
+                                  <span className="text-xs font-bold text-[#022859]">
+                                    Kelas {metodeText}
+                                  </span>
+                                </div>
+                                <span className="text-sm font-bold text-slate-900 mt-0" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                                  {item.tanggal} {item.bulan}
+                                </span>
+                                {item.durasi && (
+                                  <span className="text-xs text-slate-500 font-medium">
+                                    {item.durasi}
+                                  </span>
+                                )}
+                                <span className="text-xs font-bold text-[#1cd690] mt-1">
+                                  {hargaText}
+                                </span>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-2 gap-3">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedMetode('Offline')}
+                          className={`p-3.5 rounded-xl border-2 flex items-center gap-3 transition-all cursor-pointer ${
+                            selectedMetode === 'Offline'
+                              ? 'border-[#022859] bg-[#f0f6ff] text-[#022859] font-bold shadow-xs'
+                              : 'border-slate-200 hover:border-slate-300 text-slate-600'
+                          }`}
+                        >
+                          <Building2 size={20} className={selectedMetode === 'Offline' ? 'text-[#022859]' : 'text-slate-400'} />
+                          <div className="flex flex-col text-left">
+                            <span className="text-sm">Kelas Offline</span>
+                            <span className="text-xs font-semibold text-[#1cd690]">
+                              {typeof program.harga === 'object' ? program.harga.offline : 'Rp 3.500.000'}
+                            </span>
+                          </div>
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => setSelectedMetode('Online')}
+                          className={`p-3.5 rounded-xl border-2 flex items-center gap-3 transition-all cursor-pointer ${
+                            selectedMetode === 'Online'
+                              ? 'border-[#022859] bg-[#f0f6ff] text-[#022859] font-bold shadow-xs'
+                              : 'border-slate-200 hover:border-slate-300 text-slate-600'
+                          }`}
+                        >
+                          <Video size={20} className={selectedMetode === 'Online' ? 'text-[#022859]' : 'text-slate-400'} />
+                          <div className="flex flex-col text-left">
+                            <span className="text-sm">Kelas Online</span>
+                            <span className="text-xs font-semibold text-[#1cd690]">
+                              {typeof program.harga === 'object' ? program.harga.online : 'Rp 2.850.000'}
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Field Form Input */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Nama Lengkap */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-slate-700 flex items-center gap-1">
+                        <User size={14} className="text-[#1cd690]" />
+                        <span>Nama Lengkap <span className="text-red-500">*</span></span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Masukkan nama lengkap"
+                        value={formData.nama}
+                        onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
+                        className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#022859] focus:bg-white transition-all"
+                      />
+                    </div>
+
+                    {/* Email */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-slate-700 flex items-center gap-1">
+                        <Mail size={14} className="text-[#1cd690]" />
+                        <span>Email <span className="text-red-500">*</span></span>
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="nama@email.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#022859] focus:bg-white transition-all"
+                      />
+                    </div>
+
+                    {/* No WhatsApp */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-slate-700 flex items-center gap-1">
+                        <Phone size={14} className="text-[#1cd690]" />
+                        <span>No. WhatsApp <span className="text-red-500">*</span></span>
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="081234567890"
+                        value={formData.noWhatsapp}
+                        onChange={(e) => setFormData({ ...formData, noWhatsapp: e.target.value })}
+                        className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#022859] focus:bg-white transition-all"
+                      />
+                    </div>
+
+                    {/* Umur */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-slate-700 flex items-center gap-1">
+                        <Clock size={14} className="text-[#1cd690]" />
+                        <span>Umur (Tahun) <span className="text-red-500">*</span></span>
+                      </label>
+                      <input
+                        type="number"
+                        required
+                        min="15"
+                        max="90"
+                        placeholder="Contoh: 28"
+                        value={formData.umur}
+                        onChange={(e) => setFormData({ ...formData, umur: e.target.value })}
+                        className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#022859] focus:bg-white transition-all"
+                      />
+                    </div>
+
+                    {/* Jenis Kelamin */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-slate-700 flex items-center gap-1">
+                        <Users2 size={14} className="text-[#1cd690]" />
+                        <span>Jenis Kelamin <span className="text-red-500">*</span></span>
+                      </label>
+                      <select
+                        value={formData.jenisKelamin}
+                        onChange={(e) => setFormData({ ...formData, jenisKelamin: e.target.value })}
+                        className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#022859] focus:bg-white transition-all cursor-pointer"
+                      >
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                      </select>
+                    </div>
+
+                    {/* Pekerjaan */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-bold text-slate-700 flex items-center gap-1">
+                        <Briefcase size={14} className="text-[#1cd690]" />
+                        <span>Pekerjaan <span className="text-red-500">*</span></span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="Contoh: Staf Keuangan / PNS"
+                        value={formData.pekerjaan}
+                        onChange={(e) => setFormData({ ...formData, pekerjaan: e.target.value })}
+                        className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#022859] focus:bg-white transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Alamat */}
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs font-bold text-slate-700 flex items-center gap-1">
+                      <Map size={14} className="text-[#1cd690]" />
+                      <span>Alamat Lengkap <span className="text-red-500">*</span></span>
+                    </label>
+                    <textarea
+                      required
+                      rows={2}
+                      placeholder="Masukkan alamat domisili lengkap..."
+                      value={formData.alamat}
+                      onChange={(e) => setFormData({ ...formData, alamat: e.target.value })}
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#022859] focus:bg-white transition-all resize-none"
+                    />
+                  </div>
+
+                  {/* Tombol Kirim */}
+                  <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+                    <button
+                      type="button"
+                      onClick={() => setIsModalOpen(false)}
+                      className="py-3 px-5 text-slate-600 hover:text-slate-800 text-sm font-semibold transition-colors cursor-pointer"
+                    >
+                      Batal
+                    </button>
+                    <button
+                      type="submit"
+                      className="py-3 px-7 bg-[#022859] hover:bg-[#1cd690] hover:text-[#022859] text-white font-bold text-sm rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-2"
+                      style={{ fontFamily: 'Poppins, sans-serif' }}
+                    >
+                      <span>Kirim Pendaftaran</span>
+                      <Send size={16} />
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

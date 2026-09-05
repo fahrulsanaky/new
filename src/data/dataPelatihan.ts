@@ -20,6 +20,13 @@ export interface HargaItem {
   display?: string;
 }
 
+export interface JadwalPelatihanItem {
+  tanggal: string;
+  bulan: string;
+  durasi: string;
+  metode?: 'Offline' | 'Online' | string;
+}
+
 export interface DataPelatihanItem {
   id: string | number;
   title: string;
@@ -27,6 +34,7 @@ export interface DataPelatihanItem {
   kategori: string;
   lokasi: string;
   metode: string;
+  jadwalPelatihan?: JadwalPelatihanItem | JadwalPelatihanItem[] | string;
   harga: HargaItem;
   narasumber: NarasumberItem | NarasumberItem[];
   deskripsi: string;
@@ -58,6 +66,26 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Keuangan & Perpajakan',
     lokasi: 'Jakarta',
     metode: 'Offline dan Online',
+    jadwalPelatihan: [
+      {
+        tanggal: '15 - 16',
+        bulan: 'Oktober 2026',
+        durasi: '2 Hari (08.30 - 16.30 WIB)',
+        metode: 'Offline',
+      },
+      {
+        tanggal: '12 - 13',
+        bulan: 'November 2026',
+        durasi: '2 Hari (08.30 - 16.30 WIB)',
+        metode: 'Online',
+      },
+      {
+        tanggal: '10 - 11',
+        bulan: 'Desember 2026',
+        durasi: '2 Hari (08.30 - 16.30 WIB)',
+        metode: 'Offline',
+      },
+    ],
     harga: {
       offline: 'Rp 3.500.000',
       online: 'Rp 2.500.000',
@@ -146,6 +174,26 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Bisnis & Manajemen',
     lokasi: 'Bandung',
     metode: 'Offline dan Online',
+    jadwalPelatihan: [
+      {
+        tanggal: '22 - 23',
+        bulan: 'Oktober 2026',
+        durasi: '2 Hari (08.30 - 16.30 WIB)',
+        metode: 'Offline',
+      },
+      {
+        tanggal: '19 - 20',
+        bulan: 'November 2026',
+        durasi: '2 Hari (08.30 - 16.30 WIB)',
+        metode: 'Online',
+      },
+      {
+        tanggal: '17 - 18',
+        bulan: 'Desember 2026',
+        durasi: '2 Hari (08.30 - 16.30 WIB)',
+        metode: 'Online',
+      },
+    ],
     harga: {
       offline: 'Rp 2.800.000',
       online: 'Rp 1.950.000',
@@ -211,6 +259,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Teknologi Informasi (IT)',
     lokasi: 'Jakarta',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '05 - 06',
+      bulan: 'November 2026',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 2.200.000',
       online: 'Rp 1.500.000',
@@ -276,6 +329,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Hukum & Kepatuhan',
     lokasi: 'Yogyakarta',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '18 - 19',
+      bulan: 'November 2026',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 3.100.000',
       online: 'Rp 2.100.000',
@@ -341,6 +399,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Lingkungan & Sustainability',
     lokasi: 'Bandung',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '02 - 03',
+      bulan: 'Desember 2026',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 3.750.000',
       online: 'Rp 2.650.000',
@@ -406,6 +469,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Pendidikan & Pengembangan SDM',
     lokasi: 'Jakarta',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '16 - 17',
+      bulan: 'Desember 2026',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 2.500.000',
       online: 'Rp 1.750.000',
@@ -471,6 +539,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Keuangan & Perpajakan',
     lokasi: 'Yogyakarta',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '12 - 13',
+      bulan: 'Januari 2027',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 3.200.000',
       online: 'Rp 2.250.000',
@@ -536,6 +609,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Bisnis & Manajemen',
     lokasi: 'Jakarta',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '26 - 27',
+      bulan: 'Januari 2027',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 2.900.000',
       online: 'Rp 1.900.000',
@@ -601,6 +679,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Teknologi Informasi (IT)',
     lokasi: 'Bandung',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '09 - 10',
+      bulan: 'Februari 2027',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 2.700.000',
       online: 'Rp 1.800.000',
@@ -666,6 +749,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Hukum & Kepatuhan',
     lokasi: 'Jakarta',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '23 - 24',
+      bulan: 'Februari 2027',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 3.400.000',
       online: 'Rp 2.400.000',
@@ -731,6 +819,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Lingkungan & Sustainability',
     lokasi: 'Yogyakarta',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '09 - 10',
+      bulan: 'Maret 2027',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 2.600.000',
       online: 'Rp 1.750.000',
@@ -796,6 +889,11 @@ export const dataPelatihan: DataPelatihanItem[] = [
     kategori: 'Pendidikan & Pengembangan SDM',
     lokasi: 'Bandung',
     metode: 'Offline dan Online',
+    jadwalPelatihan: {
+      tanggal: '23 - 24',
+      bulan: 'Maret 2027',
+      durasi: '2 Hari (08.30 - 16.30 WIB)',
+    },
     harga: {
       offline: 'Rp 3.000.000',
       online: 'Rp 2.000.000',
