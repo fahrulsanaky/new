@@ -20,27 +20,27 @@ export default function MainSection() {
               color: '#1cd690',
             }}
           >
-            Kontak Kami
+            Informasi Kontak
           </span>
 
           <h2
             className="text-[32px] leading-[40px] font-bold text-[#022859] mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
-            Kunjungi & Hubungi Kami
+            Terhubung Langsung dengan Tim Kami
           </h2>
           <p
             id="informasi-subheading-text"
             className="text-[16px] leading-[24px] text-[#022859] mb-[12px]"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
-            Hubungi Kontak Kami Untuk Informasi Lebih lanjut
+            Pilih saluran komunikasi yang paling nyaman bagi Anda, atau kunjungi kantor operasional kami.
           </p>
           <p
             className="text-[16px] leading-[24px] font-semibold text-[#022859] mb-[12px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
-            Informasi:
+            Detail Kontak:
           </p>
 
           <div

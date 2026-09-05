@@ -20,13 +20,13 @@ export default function HeroSection() {
           style={{ fontFamily: 'Poppins, sans-serif' }}
           className="text-[42px] font-bold text-white tracking-tight leading-tight max-w-3xl px-0 py-0"
         >
-          Jadwal Agenda Pelatihan & Sertifikasi
+          Jadwal Pelatihan & Pengembangan Kompetensi
         </h1>
         <p 
           style={{ fontFamily: 'Nunito, sans-serif' }}
           className="mt-0 pt-0 text-sm md:text-base text-slate-200 leading-[24px] max-w-2xl px-0"
         >
-          Temukan dan rencanakan jadwal keikutsertaan program pelatihan terdekat untuk memperkuat kompetensi profesional dan organisasi Anda.
+          Rencanakan agenda peningkatan keterampilan Anda dan tim. Temukan berbagai pilihan jadwal kelas publik (Public Training) interaktif, bersertifikasi resmi, dan dibimbing langsung oleh fasilitator ahli.
         </p>
       </div>
     </section>

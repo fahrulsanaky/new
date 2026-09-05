@@ -102,21 +102,21 @@ export default function PengajuanSection() {
               lineHeight: '19.5px',
             }}
           >
-            PROSEDUR DAN FORM
+            Alur / Prosedur Pengajuan
           </span>
           <h2
             id="inhouse-prosedur-title"
             className="text-[26px] sm:text-[32px] font-bold text-white leading-[34px] sm:leading-[40px] tracking-tight mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
-            Alur Kerja Sama In-House Training
+            Langkah Mudah Mengajukan Inhouse Training
           </h2>
           <p
             id="inhouse-prosedur-subtitle"
             className="text-slate-300 text-[16px] leading-[24px] mt-0 mb-[12px]"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
-            Tahapan terstruktur untuk menyelenggarakan pelatihan yang efektif, terarah, dan memberikan hasil optimal bagi peningkatan kompetensi SDM di instansi Anda.
+            Proses kolaboratif dari konsultasi awal hingga evaluasi pasca-pelatihan untuk memastikan hasil yang optimal.
           </p>
 
           {/* Stepper Implementation */}
@@ -219,7 +219,7 @@ export default function PengajuanSection() {
               lineHeight: '19.5px',
             }}
           >
-            FORM PERMOHONAN
+            Form Pengajuan Inhouse Training
           </span>
 
           {/* Judul */}
@@ -228,7 +228,7 @@ export default function PengajuanSection() {
             className="text-[26px] sm:text-[32px] font-bold text-[#022859] leading-[34px] sm:leading-[40px] tracking-tight mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
-            Pengajuan In-House Training
+            Formulir Permohonan & Konsultasi Inhouse Training
           </h2>
 
           {/* Paragraf */}
@@ -237,7 +237,7 @@ export default function PengajuanSection() {
             className="text-slate-600 text-[15px] sm:text-[16px] leading-[24px] max-w-xl mb-[12px]"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
-            Lengkapi data di bawah ini untuk mengajukan program pelatihan khusus sesuai kebutuhan spesifik instansi atau perusahaan Anda. Tim kami akan segera meninjau dan menghubungi Anda kembali.
+            Lengkapi formulir di bawah ini untuk memberi gambaran awal kebutuhan pelatihan perusahaan Anda. Tim konsultan kami akan menghubungi Anda kembali dalam kurun waktu 1x24 jam kerja untuk memberikan penawaran dan proposal terbaik.
           </p>
 
           {/* Form Card Sesuai Desain Gambar */}

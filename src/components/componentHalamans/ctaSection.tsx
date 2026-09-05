@@ -33,7 +33,7 @@ export default function CtaSection() {
             style={{ fontFamily: 'Poppins, sans-serif' }}
             className="text-[32px] font-bold text-white leading-[40px] tracking-tight mb-[8px] text-left"
           >
-            Siap Meningkatkan Kompetensi SDM Anda?
+            Siap Meningkatkan Kompetensi Tim atau Diri Anda Hari Ini?
           </h2>
 
           {/* Paragraf */}
@@ -42,7 +42,7 @@ export default function CtaSection() {
             style={{ fontFamily: 'Nunito, sans-serif' }}
             className="text-[16px] font-normal text-[#EBFBFA] leading-[24px] max-w-xl mb-[12px] text-left"
           >
-            Jadikan tim Anda lebih produktif dan profesional. Hubungi P3I untuk jadwal pelatihan dan inhouse training terbaik.
+            Konsultasikan kebutuhan pelatihan Anda bersama tim ahli kami, atau pilih jadwal kelas yang paling sesuai dengan agenda Anda.
           </p>
 
           {/* Tombol Hubungi Kami */}

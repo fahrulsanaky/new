@@ -28,7 +28,7 @@ export default function MainSection() {
             style={{ fontFamily: 'Poppins, sans-serif' }}
             className="text-[32px] font-bold text-[#022859] leading-[40px] tracking-tight w-full mb-[8px]"
           >
-            Belajar, Bertumbuh, dan Berkembang Bersama P3I
+            Mitra Tepercaya dalam Pengembangan Keterampilan Profesional
           </h2>
 
           {/* Description Paragraph */}
@@ -37,7 +37,7 @@ export default function MainSection() {
             style={{ fontFamily: 'Nunito, sans-serif' }}
             className="text-[16px] font-normal text-[#475569] leading-[24px] w-full border-[#022859] mb-[12px]"
           >
-            P3I adalah lembaga pelatihan yang berfokus pada pengembangan kompetensi individu maupun organisasi. Setiap program dirancang dengan materi yang relevan, metode pembelajaran yang interaktif, dan pendampingan dari instruktur yang berpengalaman.
+            Pusat Pengembangan Profesi Indonesia (P3I) adalah pusat pelatihan dan pengembangan kompetensi yang berkomitmen mendampingi individu serta organisasi mencapai potensi terbaiknya. Dengan pendekatan belajar yang praktis, kurikulum berbasis kompetensi, dan dukungan jaringan instruktur profesional, kami telah dipercaya oleh ribuan alumni dan berbagai perusahaan untuk menghadirkan solusi pelatihan yang berdampak nyata.
           </p>
 
           {/* Action Button */}

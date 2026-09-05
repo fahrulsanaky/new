@@ -20,13 +20,13 @@ export default function HeroSection() {
           style={{ fontFamily: 'Poppins, sans-serif' }}
           className="text-[42px] font-bold text-white tracking-tight leading-tight max-w-3xl px-0 py-0"
         >
-          Tingkatkan Kompetensi dan Keahlian Profesional Anda
+          Tingkatkan Kompetensi SDM & Akselerasi Karier Anda Bersama Kami
         </h1>
         <p 
           style={{ fontFamily: 'Nunito, sans-serif' }}
           className="mt-0 pt-0 text-sm md:text-base text-slate-200 leading-[24px] max-w-2xl px-0"
         >
-          Kami menyediakan program pelatihan terbaik dan bersertifikasi untuk mendukung percepatan karier serta peningkatan produktivitas organisasi Anda.
+          Penyedia layanan pelatihan terstruktur dan bersertifikasi resmi. Dibimbing langsung oleh instruktur praktisi berpengalaman untuk mencetak SDM unggul, siap kerja, dan berdaya saing global.
         </p>
       </div>
     </section>

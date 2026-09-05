@@ -45,14 +45,14 @@ export default function MainSection() {
                 style={{ fontFamily: 'Nunito, sans-serif' }}
                 className="text-[16px] not-italic font-normal text-slate-800 leading-[24px] no-underline tracking-tight border-[#022859]"
               >
-                Pusat Pengembangan Profesi Indonesia (P3I) merupakan lembaga penyedia layanan pelatihan yang berfokus pada pengembangan kompetensi sumber daya manusia. Kami menghadirkan berbagai program pelatihan yang dirancang untuk membantu peserta meningkatkan pengetahuan, keterampilan, dan kepercayaan diri dalam menghadapi perkembangan dunia kerja yang terus berubah.
+                Pusat Pengembangan Profesi Indonesia (P3I) adalah penyedia layanan pelatihan, sertifikasi, dan pengembangan keterampilan profesional yang berfokus pada peningkatan kualitas sumber daya manusia. Kami hadir untuk menjawab tantangan dunia kerja dan dinamika industri yang terus berkembang pesat.
               </p>
               <p
                 id="tentang-kami-left-statement-2"
                 style={{ fontFamily: 'Nunito, sans-serif' }}
                 className="text-[16px] not-italic font-normal text-slate-800 leading-[24px] no-underline tracking-tight border-[#022859]"
               >
-                Melalui layanan Pelatihan Reguler untuk masyarakat umum dan In-House Training untuk perusahaan maupun instansi, P3I berkomitmen menghadirkan pengalaman belajar yang interaktif, aplikatif, dan memberikan manfaat nyata bagi setiap peserta.
+                Melalui kombinasi kurikulum berbasis kompetensi, metode belajar yang interaktif, serta bimbingan langsung dari instruktur praktisi berpengalaman, kami telah membantu ribuan profesional dan berbagai perusahaan mencapai standar performa terbaik mereka. Kami percaya bahwa investasi pada pengembangan SDM adalah kunci utama keberlanjutan dan kemajuan suatu organisasi.
               </p>
             </div>
 

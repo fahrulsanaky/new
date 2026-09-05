@@ -20,13 +20,13 @@ export default function HeroSection() {
           style={{ fontFamily: 'Poppins, sans-serif' }}
           className="text-[42px] font-bold text-white tracking-tight leading-tight max-w-3xl px-0 py-0"
         >
-          Konsultasikan Kebutuhan Pelatihan Anda Bersama Kami
+          Kami Siap Membantu Pengembangan SDM Anda
         </h1>
         <p 
           style={{ fontFamily: 'Nunito, sans-serif' }}
           className="mt-0 pt-0 text-sm md:text-base text-slate-200 leading-[24px] max-w-2xl px-0"
         >
-          Tim konsultan kami siap membantu merencanakan program pengembangan kapasitas terbaik yang sesuai dengan kebutuhan individu maupun institusi Anda.
+          Punya pertanyaan seputar program pelatihan, pendaftaran, atau ingin mendiskusikan program inhouse training untuk tim Anda? Hubungi kami, tim kami siap memberikan solusi terbaik.
         </p>
       </div>
     </section>

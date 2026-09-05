@@ -49,7 +49,7 @@ export default function KeunggulanSection() {
               className="text-[28px] sm:text-[32px] leading-[36px] sm:leading-[40px] font-bold text-white text-left"
               style={{ fontFamily: 'Poppins, sans-serif' }}
             >
-              Keunggulan In-House Training P3I
+              Solusi Pelatihan Tepat Guna untuk Tantangan Perusahaan Anda
             </h2>
             <div id="inhouse-keunggulan-icon-container" className="text-[#1CD690] flex items-center shrink-0">
               <Award
@@ -64,7 +64,7 @@ export default function KeunggulanSection() {
             className="text-[16px] leading-[24px] text-slate-200 font-normal max-w-3xl"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
-            Solusi pelatihan terpadu yang dirancang eksklusif untuk mendorong transformasi, efektivitas kerja, dan keunggulan kompetitif tim di organisasi Anda.
+            Kami memahami setiap perusahaan memiliki dinamika dan target yang berbeda. Program Inhouse Training kami hadir sebagai investasi strategis untuk meningkatkan performa, efisiensi, dan kompetensi tim Anda secara terukur.
           </p>
         </div>
 

@@ -20,13 +20,13 @@ export default function HeroSection() {
           style={{ fontFamily: 'Poppins, sans-serif' }}
           className="text-[42px] font-bold text-white tracking-tight leading-tight max-w-3xl px-0 py-0"
         >
-          Program Pelatihan Komprehensif & Bersertifikasi
+          Akselerasi Kompetensi & Karier Anda dengan Program Terbaik
         </h1>
         <p 
           style={{ fontFamily: 'Nunito, sans-serif' }}
           className="mt-0 pt-0 text-sm md:text-base text-slate-200 leading-[24px] max-w-2xl px-0"
         >
-          Eksplorasi ragam kurikulum pelatihan praktis yang dirancang oleh para praktisi industri untuk meningkatkan keahlian teknis dan kepemimpinan.
+          Jelajahi beragam program pelatihan peningkatan keterampilan (hard skills & soft skills) yang dirancang khusus sesuai standar industri terkini, fleksibel, dan bersertifikasi resmi.
         </p>
       </div>
     </section>

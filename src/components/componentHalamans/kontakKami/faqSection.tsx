@@ -4,27 +4,27 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 const faqItems = [
   {
     id: 'faq-1',
-    question: 'Is the home visit really free?',
+    question: 'Bagaimana cara mendaftar kelas pelatihan publik (Public Training)?',
     answer:
-      'Yes — completely free. We come to your home, measure your space and understand what you need. No charges, no commitment.',
+      'Anda dapat memilih program yang diinginkan pada halaman Jadwal Pelatihan, lalu klik tombol "Daftar". Selain itu, Anda juga bisa langsung menghubungi tim kami via WhatsApp untuk dibantu proses pendaftarannya secara praktis.',
   },
   {
     id: 'faq-2',
-    question: 'When do I pay?',
+    question: 'Apakah materi Inhouse Training bisa disesuaikan dengan kebutuhan perusahaan kami?',
     answer:
-      'Payment is made in stages. A deposit is required upon contract signing, and the remaining balance is paid upon completion and final inspection.',
+      'Tentu saja. Kami menyediakan analisis kebutuhan pelatihan (Training Needs Analysis) terlebih dahulu agar materi dan modul yang disusun benar-benar menjawab tantangan spesifik di perusahaan Anda.',
   },
   {
     id: 'faq-3',
-    question: 'How long does it take?',
+    question: 'Sertifikat apa yang akan didapatkan peserta setelah selesai pelatihan?',
     answer:
-      'Typical projects take 2 to 4 weeks depending on the complexity, design customization, and materials selected.',
+      'Setiap peserta yang menyelesaikan pelatihan akan mendapatkan Sertifikat Kehadiran/Kelulusan dari [Nama Lembaga]. Untuk program berbasis standar kompetensi, peserta yang lulus uji kompetensi juga akan mendapatkan Sertifikat Resmi BNSP / Instansi Pembina.',
   },
   {
     id: 'faq-4',
-    question: 'Is there a warranty?',
+    question: 'Di mana lokasi pelaksanaan pelatihan tatap muka (Offline)?',
     answer:
-      'Yes, all our custom furniture and installations come with a comprehensive 2-year warranty covering craftsmanship and materials.',
+      'Untuk Public Training, pelatihan umumnya diadakan di hotel berbintang mitra kami di kota-kota besar. Sedangkan untuk Inhouse Training, lokasi pelaksanaan dapat disesuaikan sepenuhnya dengan permintaan perusahaan Anda.',
   },
 ];
 
@@ -46,9 +46,7 @@ export default function FaqSection() {
             className="text-[32px] leading-[40px] font-bold text-[#022859] mb-[8px]"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           >
-            Common Questions?
-            <br />
-            Clear Answers.
+            Pertanyaan yang Sering Diajukan
           </h2>
 
           {/* Deskripsi */}
@@ -57,9 +55,7 @@ export default function FaqSection() {
             className="text-[16px] leading-[24px] text-neutral-500 max-w-md pt-2"
             style={{ fontFamily: 'Nunito, sans-serif' }}
           >
-            Still have a question? Our AI assistant is live 24/7
-            <br />
-            Ask anything about our furniture, process, or pricing and get an instant answer.
+            Temukan jawaban cepat untuk beberapa pertanyaan umum seputar program dan layanan kami di bawah ini.
           </p>
         </div>
 

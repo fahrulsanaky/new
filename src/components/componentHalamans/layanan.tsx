@@ -48,7 +48,7 @@ export default function Layanan() {
               style={{ fontFamily: 'Poppins, sans-serif' }}
               className="text-[32px] font-bold text-white leading-[40px] tracking-tight mb-[8px]"
             >
-              Pilih Program yang Sesuai dengan Kebutuhanmu
+              Solusi Pelatihan Komprehensif
             </h2>
 
             {/* Paragraf */}
@@ -57,7 +57,7 @@ export default function Layanan() {
               style={{ fontFamily: 'Nunito, sans-serif' }}
               className="text-[16px] font-normal text-[#EBFBFA] leading-[24px] max-w-xl"
             >
-              Setiap orang dan setiap organisasi memiliki kebutuhan belajar yang berbeda. Karena itu, P3I menyediakan dua layanan pelatihan yang dapat disesuaikan dengan tujuan pengembangan kompetensi
+              Pilihan layanan yang dirancang khusus untuk memenuhi kebutuhan pengembangan diri individu maupun transformasi organisasi.
             </p>
           </div>
         </div>

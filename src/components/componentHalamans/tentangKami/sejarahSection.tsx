@@ -27,7 +27,7 @@ export default function SejarahSection() {
                 }}
                 className="text-[#1CD690] font-bold text-[12px] leading-[19.5px] tracking-wider uppercase"
               >
-                SEJARAH
+                Perjalanan & Perkembanan Kami
               </span>
             </div>
 
@@ -36,7 +36,7 @@ export default function SejarahSection() {
               style={{ fontFamily: 'Poppins, sans-serif' }}
               className="text-[32px] font-normal leading-[40px] tracking-tight text-white"
             >
-              Crafting Digital Experiences that Elevate Brands
+              Langkah demi langkah komitmen kami dalam membangun ekosistem pelatihan yang berkelanjutan.
             </h2>
           </div>
 

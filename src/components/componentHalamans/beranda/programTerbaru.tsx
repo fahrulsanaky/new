@@ -17,7 +17,7 @@ export default function ProgramTerbaru() {
             style={{ fontFamily: 'Poppins, sans-serif' }}
             className="text-[#1CD690] font-bold text-xs leading-relaxed tracking-wider uppercase inline-block mb-[4px]"
           >
-            PROGRAM TERBARU
+            PROGRAM PELATIHAN TERBARU
           </span>
           <h2
             id="program-terbaru-heading"

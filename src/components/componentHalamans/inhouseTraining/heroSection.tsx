@@ -20,13 +20,13 @@ export default function HeroSection() {
           style={{ fontFamily: 'Poppins, sans-serif' }}
           className="text-[42px] font-bold text-white tracking-tight leading-tight max-w-3xl px-0 py-0"
         >
-          Solusi In-House Training Kustom untuk Korporasi
+          Solusi Pelatihan Khusus untuk Akselerasi Performa Tim Anda
         </h1>
         <p 
           style={{ fontFamily: 'Nunito, sans-serif' }}
           className="mt-0 pt-0 text-sm md:text-base text-slate-200 leading-[24px] max-w-2xl px-0"
         >
-          Modul pelatihan eksklusif yang disesuaikan secara khusus dengan tantangan bisnis, budaya perusahaan, dan sasaran strategis tim Anda.
+          Hadirkan program pelatihan eksklusif yang dirancang spesifik sesuai kebutuhan, budaya, dan target strategis perusahaan Anda. Pelaksanaan fleksibel di lokasi pilihan Anda.
         </p>
       </div>
     </section>

@@ -46,7 +46,7 @@ export default function FormKontakSection() {
               color: '#022859',
             }}
           >
-            Hubungi Tim Konsultan Kami
+            Kirim Pesan atau Pertanyaan Anda
           </h2>
 
           {/* 1 Paragraf */}
@@ -60,7 +60,7 @@ export default function FormKontakSection() {
               color: '#022859',
             }}
           >
-            Sampaikan pertanyaan, konsultasi rancangan program, atau kebutuhan pelatihan organisasi Anda. Tim representatif kami siap merespons dan membantu dengan solusi terbaik.
+            Silakan isi formulir di bawah ini. Tim kami akan merespons pesan Anda dalam kurun waktu maksimal 1x24 jam kerja.
           </p>
         </div>
 
