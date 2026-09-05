@@ -11,6 +11,7 @@ import ProgramPelatihan from './halamans/ProgramPelatihan';
 import Jadwal from './halamans/Jadwal';
 import InhouseTraining from './halamans/InhouseTraining';
 import KontakKami from './halamans/KontakKami';
+import DetailProgram from './halamans/DetailProgram';
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
         <Route path="/jadwal" element={<Jadwal />} />
         <Route path="/inhouse-training" element={<InhouseTraining />} />
         <Route path="/kontak-kami" element={<KontakKami />} />
+        <Route path="/detail-program" element={<DetailProgram />} />
+        <Route path="/detail-pelatihan" element={<DetailProgram />} />
         {/* Fallback route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

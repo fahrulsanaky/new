@@ -6,7 +6,7 @@ import {
   initialEvents,
   defaultVisibleDate,
   resources,
-} from '../../../datasets/personal-agenda';
+} from '../../../data/personal-agenda';
 
 const indonesianLocaleText: Partial<EventCalendarLocaleText> = {
   resourcesLabel: 'Kategori',

@@ -1,19 +1,20 @@
 import React, { useState, useMemo } from 'react';
-import { Search, ChevronDown, RotateCcw, ArrowLeft, ArrowRight } from 'lucide-react';
-import { trainingData } from '../../../data/trainingData';
+import { useNavigate } from 'react-router-dom';
+import { Search, ChevronDown, RotateCcw, ArrowLeft, ArrowRight, Building2, Video, MapPin } from 'lucide-react';
+import { dataPelatihan } from '../../../data/dataPelatihan';
 
 interface ProgramPelatihanSectionProps {
   setActivePage?: (page: string) => void;
 }
 
 export default function ProgramPelatihanSection({ setActivePage }: ProgramPelatihanSectionProps) {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
   // State Dropdown Open/Close untuk tiap kartu filter
   const [openKategori, setOpenKategori] = useState(true);
-  const [openMetode, setOpenMetode] = useState(true);
   const [openLokasi, setOpenLokasi] = useState(true);
 
   // Opsi Kategori Pelatihan
@@ -27,13 +28,6 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
     { id: 'pendidikan-sdm', label: 'Pendidikan & Pengembangan SDM', categoryKey: 'Pendidikan & Pengembangan SDM' },
   ];
 
-  // Opsi Metode Pelatihan
-  const metodeList = [
-    { id: 'semua', label: 'Semua', methodKey: null },
-    { id: 'offline', label: 'Offline', methodKey: 'Offline' },
-    { id: 'online', label: 'Online', methodKey: 'Online' },
-  ];
-
   // Opsi Lokasi Pelatihan
   const lokasiList = [
     { id: 'semua', label: 'Semua', locationKey: null },
@@ -43,7 +37,6 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
   ];
 
   const [selectedKategori, setSelectedKategori] = useState<string[]>(['semua']);
-  const [selectedMetode, setSelectedMetode] = useState<string[]>(['semua']);
   const [selectedLokasi, setSelectedLokasi] = useState<string[]>(['semua']);
 
   const handleKategoriToggle = (id: string) => {
@@ -56,18 +49,6 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
     const exists = filtered.includes(id);
     const next = exists ? filtered.filter((item) => item !== id) : [...filtered, id];
     setSelectedKategori(next.length === 0 ? ['semua'] : next);
-  };
-
-  const handleMetodeToggle = (id: string) => {
-    setCurrentPage(1);
-    if (id === 'semua') {
-      setSelectedMetode(['semua']);
-      return;
-    }
-    const filtered = selectedMetode.filter((item) => item !== 'semua');
-    const exists = filtered.includes(id);
-    const next = exists ? filtered.filter((item) => item !== id) : [...filtered, id];
-    setSelectedMetode(next.length === 0 ? ['semua'] : next);
   };
 
   const handleLokasiToggle = (id: string) => {
@@ -84,7 +65,6 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
 
   const handleResetFilter = () => {
     setSelectedKategori(['semua']);
-    setSelectedMetode(['semua']);
     setSelectedLokasi(['semua']);
     setSearchQuery('');
     setCurrentPage(1);
@@ -92,35 +72,37 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
 
   // Logika Filter Aktif
   const filteredCards = useMemo(() => {
-    return trainingData.filter((card) => {
+    return dataPelatihan.filter((card) => {
       // 1. Filter Kategori
       if (!selectedKategori.includes('semua')) {
-        if (!selectedKategori.includes(card.kategoriId)) {
+        const matchKategori = selectedKategori.some((kId) => {
+          const found = kategoriList.find((k) => k.id === kId);
+          return found && found.categoryKey === card.kategori;
+        });
+        if (!matchKategori) {
           return false;
         }
       }
 
-      // 2. Filter Metode
-      if (!selectedMetode.includes('semua')) {
-        if (!selectedMetode.includes(card.metodeId)) {
-          return false;
-        }
-      }
-
-      // 3. Filter Lokasi
+      // 2. Filter Lokasi
       if (!selectedLokasi.includes('semua')) {
-        if (!selectedLokasi.includes(card.lokasiId)) {
+        const matchLokasi = selectedLokasi.some((lId) => {
+          const found = lokasiList.find((l) => l.id === lId);
+          return found && found.locationKey?.toLowerCase() === card.lokasi.toLowerCase();
+        });
+        if (!matchLokasi) {
           return false;
         }
       }
 
-      // 4. Filter Pencarian Teks (Search Query)
+      // 3. Filter Pencarian Teks (Search Query)
       if (searchQuery.trim() !== '') {
         const query = searchQuery.toLowerCase();
-        const matchTitle = card.title.toLowerCase().includes(query);
-        const matchCategory = card.kategori.toLowerCase().includes(query);
-        const matchLocation = card.lokasi.toLowerCase().includes(query);
-        const matchMethod = card.metode.toLowerCase().includes(query);
+        const cardTitle = (card.title || '').toLowerCase();
+        const matchTitle = cardTitle.includes(query);
+        const matchCategory = (card.kategori || '').toLowerCase().includes(query);
+        const matchLocation = (card.lokasi || '').toLowerCase().includes(query);
+        const matchMethod = (card.metode || 'Offline dan Online').toLowerCase().includes(query);
         if (!matchTitle && !matchCategory && !matchLocation && !matchMethod) {
           return false;
         }
@@ -128,7 +110,7 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
 
       return true;
     });
-  }, [selectedKategori, selectedMetode, selectedLokasi, searchQuery]);
+  }, [selectedKategori, selectedLokasi, searchQuery]);
 
   // Hitung Total Halaman dan Data Halaman Aktif
   const totalPages = Math.max(1, Math.ceil(filteredCards.length / itemsPerPage));
@@ -243,7 +225,7 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                   Filter
                 </h3>
 
-                {(!selectedKategori.includes('semua') || !selectedMetode.includes('semua') || !selectedLokasi.includes('semua') || searchQuery !== '') && (
+                {(!selectedKategori.includes('semua') || !selectedLokasi.includes('semua') || searchQuery !== '') && (
                   <button
                     type="button"
                     onClick={handleResetFilter}
@@ -322,74 +304,7 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
                 )}
               </div>
 
-              {/* Kotak Putih 2: Metode (Dropdown) */}
-              <div
-                id="pelatihan-filter-inner-box-2"
-                className="w-full rounded-[12px] bg-white border-0 p-4 flex flex-col transition-all duration-200"
-                style={{
-                  borderRadius: '12px',
-                  backgroundColor: '#ffffff',
-                  border: 'none',
-                }}
-              >
-                {/* Header Subjudul + Icon Toggle */}
-                <button
-                  type="button"
-                  id="pelatihan-filter-metode-toggle"
-                  onClick={() => setOpenMetode(!openMetode)}
-                  className="w-full flex items-center justify-between text-left cursor-pointer select-none focus:outline-none group"
-                >
-                  <h4
-                    id="pelatihan-filter-metode-title"
-                    className="text-[16px] leading-[22px] font-bold text-[#022859] group-hover:text-blue-900 transition-colors"
-                    style={{
-                      fontFamily: 'Poppins, sans-serif',
-                      color: '#022859',
-                    }}
-                  >
-                    Metode
-                  </h4>
-                  <ChevronDown
-                    size={18}
-                    id="pelatihan-filter-metode-icon"
-                    className={`text-[#022859] transition-transform duration-200 ${
-                      openMetode ? 'rotate-180' : 'rotate-0'
-                    }`}
-                  />
-                </button>
-                
-                {/* Opsi Checkbox Metode */}
-                {openMetode && (
-                  <div id="pelatihan-filter-metode-list" className="flex flex-col gap-2.5 pt-3 mt-2 border-t border-slate-100">
-                    {metodeList.map((opt) => {
-                      const isChecked = selectedMetode.includes(opt.id);
-                      return (
-                        <label
-                          key={opt.id}
-                          id={`filter-metode-label-${opt.id}`}
-                          className="flex items-center gap-3 cursor-pointer select-none text-left"
-                        >
-                          <input
-                            type="checkbox"
-                            id={`filter-metode-input-${opt.id}`}
-                            checked={isChecked}
-                            onChange={() => handleMetodeToggle(opt.id)}
-                            className="w-4 h-4 rounded border border-slate-300 text-[#022859] focus:ring-[#022859] cursor-pointer accent-[#022859] shrink-0"
-                          />
-                          <span 
-                            className="text-[13px] sm:text-[14px] leading-tight text-slate-700 font-medium hover:text-[#022859] transition-colors" 
-                            style={{ fontFamily: 'Nunito, sans-serif' }}
-                          >
-                            {opt.label}
-                          </span>
-                        </label>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-
-              {/* Kotak Putih 3: Lokasi (Dropdown) */}
+              {/* Kotak Putih 2: Lokasi (Dropdown) */}
               <div
                 id="pelatihan-filter-inner-box-3"
                 className="w-full rounded-[12px] bg-white border-0 p-4 flex flex-col transition-all duration-200"
@@ -489,82 +404,112 @@ export default function ProgramPelatihanSection({ setActivePage }: ProgramPelati
               <div className="flex flex-col gap-8">
                 {/* Grid Kartu Pelatihan */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
-                  {paginatedCards.map((card) => (
-                    <div
-                      key={card.id}
-                      id={`pelatihan-card-${card.id}`}
-                      className="w-full bg-white rounded-[16px] border border-slate-200 overflow-hidden flex flex-col justify-between"
-                      style={{
-                        borderRadius: '16px',
-                        backgroundColor: '#ffffff',
-                      }}
-                    >
-                      {/* 1. Gambar dengan padding & rounded (tidak full bleed) */}
-                      <div className="p-3 pb-0">
-                        <div className="w-full h-36 overflow-hidden bg-slate-100 rounded-[8px]">
-                          <img
-                            src={card.image}
-                            alt={card.title}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 rounded-[8px]"
-                            referrerPolicy="no-referrer"
-                            onError={(e) => {
-                              e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
-                            }}
-                          />
-                        </div>
-                      </div>
+                  {paginatedCards.map((card) => {
+                    const cardTitle = card.judulPelatihan || card.title;
+                    const cardImage = card.gambarPelatihan || card.image;
+                    const offlinePrice = typeof card.harga === 'object' ? card.harga.offline : 'Rp 3.500.000';
+                    const onlinePrice = typeof card.harga === 'object' ? card.harga.online : 'Rp 2.850.000';
 
-                      {/* Konten Text & Tombol */}
-                      <div className="p-4 flex flex-col flex-1 justify-between gap-4">
-                        <div className="flex flex-col gap-1.5">
-                          {/* Judul Card */}
-                          <h3
-                            className="text-[15px] font-bold text-[#022859] leading-[20px] line-clamp-2"
-                            style={{ fontFamily: 'Poppins, sans-serif' }}
-                          >
-                            {card.title}
-                          </h3>
-
-                          {/* Kategori Pelatihan */}
-                          <span
-                            className="text-[12px] font-semibold text-[#1CD690] tracking-wide"
-                            style={{ fontFamily: 'Nunito, sans-serif' }}
-                          >
-                            {card.kategori}
-                          </span>
-
-                          {/* Informasi Lokasi, Metode & Harga */}
-                          <div className="flex flex-col gap-1 pt-1.5 border-t border-slate-100 text-[12px] text-slate-700 font-medium" style={{ fontFamily: 'Nunito, sans-serif' }}>
-                            <div className="flex items-center">
-                              <span className="w-[60px] text-slate-500 font-normal shrink-0">Lokasi</span>
-                              <span className="mr-1.5 text-slate-400">:</span>
-                              <span className="font-semibold text-slate-800 truncate">{card.lokasi}</span>
-                            </div>
-                            <div className="flex items-center">
-                              <span className="w-[60px] text-slate-500 font-normal shrink-0">Metode</span>
-                              <span className="mr-1.5 text-slate-400">:</span>
-                              <span className="font-semibold text-slate-800 truncate">{card.metode}</span>
-                            </div>
-                            <div className="flex items-center">
-                              <span className="w-[60px] text-slate-500 font-normal shrink-0">Harga</span>
-                              <span className="mr-1.5 text-slate-400">:</span>
-                              <span className="font-bold text-[#022859] truncate">{card.harga}</span>
-                            </div>
+                    return (
+                      <div
+                        key={card.id}
+                        id={`pelatihan-card-${card.id}`}
+                        className="w-full bg-white rounded-[16px] border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition-shadow duration-300"
+                        style={{
+                          borderRadius: '16px',
+                          backgroundColor: '#ffffff',
+                        }}
+                      >
+                        {/* 1. Gambar dengan padding & rounded (tidak full bleed) */}
+                        <div className="p-3 pb-0">
+                          <div className="w-full h-36 overflow-hidden bg-slate-100 rounded-[8px]">
+                            <img
+                              src={cardImage}
+                              alt={cardTitle}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 rounded-[8px]"
+                              referrerPolicy="no-referrer"
+                              onError={(e) => {
+                                e.currentTarget.src = 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80';
+                              }}
+                            />
                           </div>
                         </div>
 
-                        {/* Button Detail */}
-                        <button
-                          type="button"
-                          onClick={() => setActivePage && setActivePage('detail-pelatihan')}
-                          className="w-full py-[8px] px-3 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-[13px] rounded-[12px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95 text-center flex items-center justify-center"
-                          style={{ fontFamily: 'Nunito, sans-serif' }}
-                        >
-                          Lihat Detail Kelas
-                        </button>
+                        {/* Konten Text & Tombol */}
+                        <div className="p-4 flex flex-col flex-1 justify-between gap-4">
+                          <div className="flex flex-col gap-1.5">
+                            {/* Kategori Pelatihan */}
+                            <span
+                              className="text-[12px] font-semibold text-[#1CD690] tracking-wide"
+                              style={{ fontFamily: 'Nunito, sans-serif' }}
+                            >
+                              {card.kategori}
+                            </span>
+
+                            {/* Judul Card */}
+                            <h3
+                              className="text-[15px] font-bold text-[#022859] leading-[20px] line-clamp-2"
+                              style={{ fontFamily: 'Poppins, sans-serif' }}
+                            >
+                              {cardTitle}
+                            </h3>
+                            
+                            {/* Informasi Lokasi, Pilihan Kelas & Harga */}
+                            <div className="flex flex-col gap-2 pt-2 border-t border-slate-100 text-[12px] text-slate-700 font-medium" style={{ fontFamily: 'Nunito, sans-serif' }}>
+                              <div className="flex items-center">
+                                <span className="w-[85px] text-slate-500 font-normal shrink-0">Lokasi</span>
+                                <span className="mr-1.5 text-slate-400">:</span>
+                                <span className="font-semibold text-slate-800 truncate">{card.lokasi}</span>
+                              </div>
+
+                              {/* Pilihan Kelas */}
+                              <div className="flex flex-col gap-1">
+                                <span className="text-slate-500 font-normal">Pilihan Kelas :</span>
+                                <div className="flex flex-col gap-1 pl-1">
+                                  <div className="flex items-center gap-1.5 text-slate-800 font-semibold">
+                                    <Building2 size={14} className="text-[#1CD690] shrink-0" />
+                                    <span>Offline</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5 text-slate-800 font-semibold">
+                                    <Video size={14} className="text-[#1CD690] shrink-0" />
+                                    <span>Online</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Harga */}
+                              <div className="flex flex-col gap-1">
+                                <span className="text-slate-500 font-normal">Harga :</span>
+                                <div className="flex flex-col gap-1 pl-1">
+                                  <div className="flex items-center gap-1.5 text-[#022859] font-bold">
+                                    <Building2 size={14} className="text-[#1CD690] shrink-0" />
+                                    <span>{offlinePrice}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1.5 text-[#022859] font-bold">
+                                    <Video size={14} className="text-[#1CD690] shrink-0" />
+                                    <span>{onlinePrice}</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Button Detail */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (setActivePage) setActivePage('detail-program');
+                              navigate(`/detail-program?id=${card.id}`);
+                            }}
+                            className="w-full py-[8px] px-3 bg-[#022859] text-white hover:bg-[#1CD690] hover:text-[#022859] hover:-translate-y-[1px] hover:shadow-[0px_2px_8px_rgba(2,40,89,0.25)] font-bold text-[13px] rounded-[12px] transition-all duration-200 ease-in-out cursor-pointer active:scale-95 text-center flex items-center justify-center"
+                            style={{ fontFamily: 'Nunito, sans-serif' }}
+                          >
+                            Lihat Detail Kelas
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
                 {/* Komponen Pagination Desain Presisi sesuai Permintaan dan Gambar */}
